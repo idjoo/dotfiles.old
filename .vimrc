@@ -4,9 +4,26 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+    Plug 'tmhedberg/SimpylFold'
+    Plug 'vim-scripts/indentpython.vim'
+    Plug 'vim-syntastic/syntastic'
+    Plug 'nvie/vim-flake8'
+    
+    " Nerd Tree and its plugin
+    Plug 'preservim/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'scrooloose/nerdtree-project-plugin'
+    Plug 'PhilRunninger/nerdtree-buffer-ops'
+
+    Plug 'lilydjwg/colorizer'
+    Plug 'dylanaraps/wal.vim'
 call plug#end()
 
+colorscheme wal
+
 " Settings
+set encoding=utf-8
 set nocompatible
 set hidden
 set wildmenu
@@ -29,6 +46,23 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set clipboard=unnamed
+set foldmethod=indent
+set foldlevel=99
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let python_highlight_all=1
+syntax on
 
 if has('python3')
   python3 import sys
@@ -46,8 +80,14 @@ if has('mouse')
   set mouse=a
 endif
 
+" Mapping
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <leader>f :Prettier<CR>
+vmap <leader>ff <Plug>(coc-format-selected)
+nmap <leader>ff <Plug>(coc-format-selected)
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -77,7 +117,14 @@ nnoremap <C-H> <C-W><C-H>
 " Clipboard
 vnoremap <leader>y "+y
 
+"" Plugin config
 " TeX config
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
+
+" SimpylFold
+let g:SimpylFold_docstring_preview=1
+
+" Coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
