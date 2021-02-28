@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'lilydjwg/colorizer'
     Plug 'dylanaraps/wal.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 colorscheme wal
@@ -128,3 +129,7 @@ let g:SimpylFold_docstring_preview=1
 " Coc-prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+" fzf
+nmap <C-p> :Files<CR>
+nmap <C-e> :Buffers<CR>
+let g:fzf_action = { 'ctrl-e': 'edit' }
