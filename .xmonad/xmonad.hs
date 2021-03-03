@@ -11,6 +11,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
 import XMonad.Layout.Reflect 
 import XMonad.Layout.Tabbed
+import XMonad.Layout.Spacing
 
 -- Hooks --
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
@@ -163,7 +164,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| simpleTabbed )
   where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
+     tiled   = smartSpacing 3 $ Tall nmaster delta ratio
      -- The default number of windows in the master pane
      nmaster = 1
      -- Default proportion of screen occupied by master pane
@@ -219,10 +220,11 @@ myStartupHook = do
 -- spawnOnce "gifview --animate --window root $HOME/Pictures/.wallpaper/wallpaper10.gif &"
 -- Backend choice : colorz schemer2 haishoku colorthief wal
     spawnOnce "chameleon.py -i $HOME/Pictures/.wallpaper/wallpaper14.jpg --backend colorz"
-    spawnOnce "pywal-discord"
-    spawnOnce "pywalfox update"
+--    spawnOnce "pywal-discord"
+--    spawnOnce "pywalfox update"
     spawnOnce "dunst &"
     spawnOnce "flameshot &"
+    spawn "picom --experimental-backend &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

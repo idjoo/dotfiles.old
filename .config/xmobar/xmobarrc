@@ -3,8 +3,8 @@ Config {
        , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=10:antialias=true:hinting=true"
                            , "xft:FontAwesome:pixelsize=10"
                            ]
-       , bgColor = "#0f1e24"
-       , fgColor = "#D8CAAC"
+       , bgColor = "#1f1f1c"
+       , fgColor = "#c7c7c6"
        , position = Static { xpos = 0 , ypos = 0, width = 1366, height = 20 }
        , lowerOnStart = True
        , hideOnStart = False
