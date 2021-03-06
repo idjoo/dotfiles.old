@@ -8,6 +8,8 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 export PATH="$HOME/.telegram-palette-gen":$PATH
 export XDEB_PKGROOT="$XDG_CONFIG_HOME/xdeb"
 
+# Startup
+
 # Set vim as default editor
 VIMRUNTIME=/usr/bin
 EDITOR=/usr/bin/vim

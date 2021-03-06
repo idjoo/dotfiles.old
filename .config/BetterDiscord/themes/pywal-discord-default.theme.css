@@ -12,27 +12,27 @@
     --wallpaper: url("/home/cocatrip/Pictures/.wallpaper/wallpaper14.jpg");
 
     /* Special */
-    --background: #040705;
-    --foreground: #a2a8a4;
-    --cursor: #a2a8a4;
+    --background: #1f1f1c;
+    --foreground: #c7c7c6;
+    --cursor: #c7c7c6;
 
     /* Colors */
-    --color0: #040705;
-    --color1: #305531;
-    --color2: #325b62;
-    --color3: #5c582d;
-    --color4: #4f7b46;
-    --color5: #558b9a;
-    --color6: #8f8a3b;
-    --color7: #a2a8a4;
-    --color8: #45524a;
-    --color9: #305531;
-    --color10: #325b62;
-    --color11: #5c582d;
-    --color12: #4f7b46;
-    --color13: #558b9a;
-    --color14: #8f8a3b;
-    --color15: #a2a8a4;
+    --color0: #1f1f1c;
+    --color1: #9d9f90;
+    --color2: #8fab4a;
+    --color3: #5baa54;
+    --color4: #6eaa79;
+    --color5: #4baa71;
+    --color6: #5aa4a3;
+    --color7: #c7c7c6;
+    --color8: #575754;
+    --color9: #9d9f90;
+    --color10: #8fab4a;
+    --color11: #5baa54;
+    --color12: #6eaa79;
+    --color13: #4baa71;
+    --color14: #5aa4a3;
+    --color15: #c7c7c6;
 }
 /**  colors will come from .cache/wal/colors.css as variables defined in :root
  *  see: cat $HOME/.cache/wal/colors.css

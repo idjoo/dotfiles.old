@@ -53,8 +53,8 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#1f1f1c"
+myFocusedBorderColor = "#8fab4a"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -79,7 +79,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_d     ), spawn "rofi -show drun")
     -- close focused window 
-    , ((modm    , xK_q     ), kill)
+    , ((modm,               xK_w     ), kill)
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
     --  Reset the layouts on the current workspace to default
@@ -164,7 +164,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| simpleTabbed )
   where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = smartSpacing 3 $ Tall nmaster delta ratio
+     tiled   = spacingWithEdge 5 $ Tall nmaster delta ratio
      -- The default number of windows in the master pane
      nmaster = 1
      -- Default proportion of screen occupied by master pane
@@ -224,7 +224,7 @@ myStartupHook = do
 --    spawnOnce "pywalfox update"
     spawnOnce "dunst &"
     spawnOnce "flameshot &"
-    spawn "picom --experimental-backend &"
+    spawn "killall picom ; picom --experimental-backend &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

@@ -1,1 +1,9 @@
 Loaded package environment from /home/cocatrip/.ghc/x86_64-linux-8.8.4/environments/default
+
+xmonad.hs:167:16: warning: [-Wdeprecations]
+    In the use of ‘spacingWithEdge’
+    (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+    |
+167 |      tiled   = spacingWithEdge 5 $ Tall nmaster delta ratio
+    |                ^^^^^^^^^^^^^^^
