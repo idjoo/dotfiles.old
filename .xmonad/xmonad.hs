@@ -66,8 +66,8 @@ myAddKeys =
          ("<XF86AudioMute>", spawn "pamixer -t")
         ,("<XF86AudioLowerVolume>", spawn "pamixer -d5")
         ,("<XF86AudioRaiseVolume>", spawn "pamixer -i5")
-        ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
-        ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
+        ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 2.5")
+        ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 2.5")
         ,("<Print>", spawn "flameshot full")
         ,("M-<Print>", spawn "flameshot gui")
     ]

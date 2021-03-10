@@ -19,6 +19,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'lilydjwg/colorizer'
     Plug 'dylanaraps/wal.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'tpope/vim-commentary'
+    
+    " Mobile App Development
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'thosakwe/vim-flutter'
 call plug#end()
 
 colorscheme wal

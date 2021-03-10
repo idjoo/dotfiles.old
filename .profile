@@ -3,10 +3,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:~/.cabal/bin
 export PATH=$PATH:~/.cabal/bin
 export SPICETIFY_INSTALL="$HOME/.spicetify-cli"
-export SPICETIFY_INSTALL="$HOME/.void-packages"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 export PATH="$HOME/.telegram-palette-gen":$PATH
 export XDEB_PKGROOT="$XDG_CONFIG_HOME/xdeb"
+export PATH="$PATH:$HOME/.local/share/flutter/bin"
 
 # Startup
 
