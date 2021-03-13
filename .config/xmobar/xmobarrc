@@ -13,7 +13,7 @@ Config {
        , iconRoot = "/home/cocatrip/.xmonad/xpm/"  -- default: "."
        , commands = [
                       -- Time and date
-                      Run Date "<fn=1>\xf133</fn>  %b %d %Y - (%H:%M) " "date" 50
+                      Run Date "<fn=1>\xf133</fn>  %d %b %Y - (%H:%M) " "date" 50
                       -- Network up and down
                     , Run Network "wlp3s0" ["-t", "<fn=1>\xf0aa</fn>  <rx>kb  <fn=1>\xf0ab</fn>  <tx>kb"] 20
                       -- Cpu usage in percent

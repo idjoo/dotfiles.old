@@ -7,6 +7,7 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 export PATH="$HOME/.telegram-palette-gen":$PATH
 export XDEB_PKGROOT="$XDG_CONFIG_HOME/xdeb"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
+export GOPATH=$HOME/.go
 
 # Startup
 
