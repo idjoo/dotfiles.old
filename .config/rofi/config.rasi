@@ -1,7 +1,7 @@
 configuration {
     modi: "drun,run,window,ssh";
-    !           `background`, `border`
-    rofi.color-window: , #11ff11
+    /* !           `background`, `border` */
+    /* rofi.color-window: , #11ff11 */
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/

@@ -6,7 +6,6 @@ Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
-
 !! Colorscheme
 #define mybg    [50]#0F1E24
 #define myfg    #dce7bf
