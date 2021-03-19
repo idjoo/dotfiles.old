@@ -5,6 +5,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'    
@@ -100,11 +105,6 @@ vmap <leader>ff <Plug>(coc-format-selected)
 nmap <leader>ff <Plug>(coc-format-selected)
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
-
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
 
 " Cursor Fix
 let &t_SI = "\e[6 q"
