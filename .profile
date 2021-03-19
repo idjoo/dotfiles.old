@@ -1,6 +1,6 @@
 ##### PATH #####
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:~/.cabal/bin
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:~/.cabal/bin:/var/lib/flatpak/exports/share/applications
 export PATH=$PATH:~/.cabal/bin
 export SPICETIFY_INSTALL="$HOME/.spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"

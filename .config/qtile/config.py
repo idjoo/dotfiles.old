@@ -172,14 +172,22 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray(),
-                widget.Clock(
-                    format = "%A, %B %d - %H:%M "
-                ),
                 widget.Systray(
                     background = colors[0],
                     padding = 5
                 ),
+                widget.CheckUpdates(
+                    update_interval = 1800,
+                    distro = "Void",
+                    display_format = "{updates} Updates",
+                    foreground = colors[2],
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e doas xbps-install -Suv')},
+                    background = colors[4]
+                ),
+                widget.Clock(
+                    format = "%A, %B %d - %H:%M "
+                ),
+                
                 # widget.QuickExit(),
             ],
             20,
