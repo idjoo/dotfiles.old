@@ -77,7 +77,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     -- launch dmenu
-    , ((modm,               xK_d     ), spawn "rofi -show drun")
+    , ((modm,               xK_d     ), spawn "dmenu_run -i -nf '#ffffff' -sb '#8fab4a' -sf '#1f1f1c'")
     -- close focused window 
     , ((modm,               xK_w     ), kill)
      -- Rotate through the available layout algorithms
