@@ -1,5 +1,6 @@
 import os
 import re
+import json
 import socket
 import subprocess
 
@@ -10,6 +11,19 @@ from libqtile.lazy import lazy
 
 mod = "mod4"
 terminal = "urxvt"
+home = os.path.expanduser('~')
+
+with open(home + '/.cache/wal/colors.json') as json_file:
+    data = json.load(json_file)
+    colorsarray = data['colors']
+    val_list = list(colorsarray.values())
+    def getList(val_list):
+        return [*val_list]
+
+def init_colors():
+    return [*val_list]
+
+colors = init_colors()
 
 keys = [
     # Switch between windows
@@ -57,7 +71,8 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
-    Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu"),
+    # Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu"),
+    Key([mod], "d", lazy.spawn("rofi -theme '~/.config/rofi/config2.rasi' -show drun"), desc="Spawn dmenu"),
 ]
 
 groups = [Group(i) for i in "1234567890"]
@@ -86,8 +101,8 @@ layout_theme = {
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.Columns(),
     layout.Max(),
+    # layout.Columns(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -100,100 +115,206 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-colors = [["#282c34", "#282c34"], # panel background
-          ["#1f1f1c", "#1f1f1c"], # background for current screen tab
-          ["#ffffff", "#ffffff"], # font color for group names
-          ["#8fab4a", "#8fab4a"], # border line color for current tab
-          ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
-          ["#8fab4a", "#8fab4a"]] # window name
-
-widget_defaults = dict(
-    # font="Terminess (TTF) Nerd Font Complete Mono",
-    fontsize=12,
-    padding=2,
-    background=colors[1],    
-)
+widget_defaults = dict(font="TerminessTTF Nerd Font Mono Medium",fontsize=13,padding=2,background=colors[0])
 extension_defaults = widget_defaults.copy()
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
-screens = [
-    Screen(
-        top=bar.Bar(
-            [
+def init_widget_list():
+    widget_list = [
                 widget.Sep(
                     linewidth = 0,
                     padding = 6,
-                    foreground = colors[2],
-                    background = colors[0],
-                    ),
+                    foreground = colors[7]
+                ),
                 widget.Image(
                     filename = "~/.config/qtile/icons/void.xpm",
-                    scale = "True",
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal)}
-                    ),
-                widget.CurrentLayout(),
-                widget.GroupBox(
-                    # font = "Terminess",
-                    fontsize = 9,
-                    margin_y = 3,
-                    margin_x = 0,
-                    padding_y = 5,
-                    padding_x = 3,
-                    borderwidth = 3,
-                    active = colors[2],
-                    inactive = colors[2],
-                    rounded = False,
-                    highlight_color = colors[1],
-                    highlight_method = "line",
-                    this_current_screen_border = colors[6],
-                    this_screen_border = colors[4],
-                    other_current_screen_border = colors[6],
-                    other_screen_border = colors[4],
-                    foreground = colors[2],
-                    background = colors[0]
+                    scale = "False",
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('rofi -theme "~/.config/rofi/launcher.rasi" -show drun')},
                 ),
+                #### Shortcuts ####
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 6,
+                    foreground = colors[7]
+                ),
+                widget.TextBox(
+                    font='Font Awesome 5 Free',
+                    fontsize=15,
+                    foreground=colors[7],
+                    text="",
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('thunar')},
+                    fontshadow=colors[3]
+                    ),
+                # widget.Sep(
+                #     linewidth = 0,
+                #     padding = 6,
+                #     foreground = colors[7]
+                # ),
+                widget.TextBox(
+                    foreground=colors[1],
+                    text="◢",
+                    fontsize=45,
+                    padding=-2
+                    ),
+                #### Groups ####
+                widget.GroupBox(
+                    # font='Font Awesome 5 Free',
+                    font='TerminessTTF Nerd Font Mono',
+                    fontsize=15,
+                    disable_drag=True,
+                    hide_unused=False,
+                    fontshadow=colors[0],
+                    margin_y=1,
+                    padding_x=5,
+                    borderwidth=0,
+                    active=colors[7],
+                    inactive=colors[1],
+                    rounded=False,
+                    highlight_method="text",
+                    this_current_screen_border=colors[0],
+                    this_screen_border=colors[3],
+                    other_current_screen_border=colors[0],
+                    other_screen_border=colors[0],
+                    foreground=colors[2],
+                    background=colors[1]
+                    ),
+                #### Notification ####
                 widget.Prompt(
                     prompt = prompt,
-                    # font = "Terminess Mono",
-                    padding = 10,
-                    foreground = colors[3],
+                    foreground=colors[0],
                     background = colors[1]
-                ),
+                    ),
+                widget.TextBox(
+                    background=colors[0],
+                    foreground=colors[1],
+                    text="◤",
+                    fontsize=45,
+                    padding=-2
+                    ),
+                #### Window Name ####
+                widget.TextBox(
+                    font='Font Awesome 5 Free',
+                    fontsize=12,
+                    foreground=colors[7],
+                    fontshadow=colors[4],
+                    text=""
+                    ),
                 widget.WindowName(
-                    foreground = colors[6],
-                    background = colors[0],
-                    padding = 0
-                ),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#8fab4a", "#1f1f1c"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Systray(
-                    background = colors[0],
-                    padding = 5
-                ),
+                    foreground=colors[7],
+                    background=colors[0],
+                    padding=5,
+                    format='{name}',
+                    empty_group_string='QARSlp',
+                    max_chars=45
+                    ),
+                widget.Notify(
+                    default_timeout=15,
+                    foreground_urgent=colors[7],
+                    foreground=colors[7],
+                    background=colors[0]
+                    ),
+                #### Spacer ####
+                # widget.Spacer(
+                #     length=bar.STRETCH,
+                #     background=colors[0],
+                #     foreground=colors[0]
+                #     ),
+                ### Layouts ####
+                widget.TextBox(
+                    text="◢",
+                    background=colors[0],
+                    foreground=colors[2],
+                    padding=-2,
+                    fontsize=45
+                    ),
+                widget.TextBox(
+                    font='Font Awesome 5 Free',
+                    fontsize=15,
+                    background=colors[2],
+                    foreground=colors[0],
+                    fontshadow=colors[7],
+                    text=""
+                    ),
+                widget.CurrentLayout(
+                    background=colors[2],
+                    foreground=colors[0]
+                    ),
+                #### Updates ####
+                widget.TextBox(
+                    text='◢',
+                    background=colors[2],
+                    foreground=colors[3],
+                    padding=-2,
+                    fontsize=45
+                    ),
+                widget.TextBox(
+                    font='Font Awesome 5 Free',
+                    fontsize=15,
+                    background=colors[3],
+                    foreground=colors[0],
+                    fontshadow=colors[7],
+                    text=" ",
+                    ),
                 widget.CheckUpdates(
-                    update_interval = 1800,
-                    distro = "Void",
-                    display_format = "{updates} Updates",
-                    foreground = colors[2],
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e doas xbps-install -Suv')},
-                    background = colors[4]
-                ),
+                    update_interval=1800,
+                    distro='Void_checkupdates',
+                    foreground=colors[0],
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(term + ' -e sudo pacman -Syu')},
+                    display_format="{updates} updates",
+                    background=colors[3],
+                    colour_have_updates=colors[0],
+                    colour_no_updates=colors[0]
+                    ),
+                #### Sound Control ####
+                widget.TextBox(
+                    text='◢',
+                    background=colors[3],
+                    foreground=colors[7],
+                    padding=-2,
+                    fontsize=45
+                    ),
+                widget.TextBox(
+                    font='Font Awesome 5 Free',
+                    text=" ",
+                    foreground=colors[0],
+                    background=colors[7],
+                    padding=0,
+                    fontsize=15,
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('pavucontrol')},
+                    fontshadow=colors[3]
+                    ),
+                widget.Volume(
+                    channel='Master',
+                    background=colors[7],
+                    foreground=colors[0],
+                    fontshadow=colors[7]
+                    ),
+                #### Date Clock Session Control ####
+                widget.TextBox(
+                    text='◢',
+                    background=colors[7],
+                    foreground=colors[0],
+                    padding=-2,
+                    fontsize=45
+                    ),
+                widget.TextBox(
+                    font='Font Awesome 5 Free',
+                    padding=1,
+                    text="",
+                    fontsize=15,
+                    foreground=colors[7],
+                    background=colors[0],
+                    fontshadow=colors[3]
+                    ),
                 widget.Clock(
-                    format = "%A, %B %d - %H:%M "
-                ),
-                
-                # widget.QuickExit(),
-            ],
-            20,
-        ),
-    ),
-]
+                    foreground=colors[7],
+                    background=colors[0],
+                    format="%b %a %d -> %H:%M",
+                    update_interval=1
+                    ),
+    ]
+    return widget_list
 
 # Drag floating layouts.
 mouse = [
@@ -204,12 +325,22 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
+def init_widgets_top():
+    widgets_screen_top = init_widget_list()
+    return widgets_screen_top
+def init_screens():
+    return [Screen(top=bar.Bar(widgets=init_widgets_top(), size=20, background=colors[0]))]
+
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
+
+colors = init_colors()
+screens = init_screens()
+
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
@@ -228,12 +359,4 @@ def start_once():
     home = os.path.expanduser('~')     
     subprocess.call([home + '/.config/qtile/autostart.sh'])
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "qtile"

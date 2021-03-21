@@ -32,7 +32,7 @@ source ~/.cache/wal/colors-tty.sh
 
 ##### START WM #####
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-  pgrep xmonad || startx "$HOME/.xinitrc"
+  pgrep qtile || startx "$HOME/.xinitrc"
 fi
 
 eval "$(gh completion -s zsh)"

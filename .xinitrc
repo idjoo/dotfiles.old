@@ -16,4 +16,4 @@ xrdb .Xresources
 xsetroot -cursor_name left_ptr &
 xbacklight -set 40
 
-exec xmonad
+exec qtile
