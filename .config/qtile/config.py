@@ -1,5 +1,6 @@
 import os
 import re
+import gi
 import json
 import socket
 import subprocess
@@ -258,9 +259,10 @@ def init_widget_list():
                     ),
                 widget.CheckUpdates(
                     update_interval=1800,
-                    distro='Void_checkupdates',
+                    # distro='Void_checkupdates',
+                    custom_command="void-updates"
                     foreground=colors[0],
-                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(term + ' -e sudo pacman -Syu')},
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(terminal + ' -e doas xbps-install -Suv')},
                     display_format="{updates} updates",
                     background=colors[3],
                     colour_have_updates=colors[0],
