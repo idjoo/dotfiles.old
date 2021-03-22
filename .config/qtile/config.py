@@ -260,7 +260,7 @@ def init_widget_list():
                 widget.CheckUpdates(
                     update_interval=1800,
                     # distro='Void_checkupdates',
-                    custom_command="void-updates"
+                    custom_command="void-updates",
                     foreground=colors[0],
                     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(terminal + ' -e doas xbps-install -Suv')},
                     display_format="{updates} updates",
