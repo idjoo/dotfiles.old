@@ -12,8 +12,8 @@ export GOPATH=$HOME/.go
 # Startup
 
 # Set vim as default editor
-VIMRUNTIME=/usr/bin
-EDITOR=/usr/bin/vim
+export EDITOR="vim"
+export VISUAL="vim"
 
 # set PATH so it includes user's private ~/.local/bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then

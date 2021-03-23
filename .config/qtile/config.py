@@ -70,10 +70,10 @@ keys = [
 
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
+    Key([mod], "d", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
     # Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu"),
-    Key([mod], "d", lazy.spawn("rofi -theme '~/.config/rofi/config2.rasi' -show drun"), desc="Spawn dmenu"),
+    # Key([mod], "d", lazy.spawn("rofi -theme '~/.config/rofi/config2.rasi' -show drun"), desc="Spawn dmenu"),
 ]
 
 groups = [Group(i) for i in "1234567890"]
@@ -119,7 +119,8 @@ layouts = [
 widget_defaults = dict(font="TerminessTTF Nerd Font Mono Medium",fontsize=13,padding=2,background=colors[0])
 extension_defaults = widget_defaults.copy()
 
-prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
+# prompt = "{0}@{1}:".format(os.environ["USER"], socket.gethostname())
+prompt = " "
 
 def init_widget_list():
     widget_list = [
@@ -170,7 +171,7 @@ def init_widget_list():
                     padding_x=5,
                     borderwidth=0,
                     active=colors[7],
-                    inactive=colors[1],
+                    inactive=colors[1], 
                     rounded=False,
                     highlight_method="text",
                     this_current_screen_border=colors[0],
@@ -180,18 +181,18 @@ def init_widget_list():
                     foreground=colors[2],
                     background=colors[1]
                     ),
-                #### Notification ####
-                widget.Prompt(
-                    prompt = prompt,
-                    foreground=colors[0],
-                    background = colors[1]
-                    ),
                 widget.TextBox(
                     background=colors[0],
                     foreground=colors[1],
                     text="◤",
                     fontsize=45,
                     padding=-2
+                    ),
+                #### Notification ####
+                widget.Prompt(
+                    prompt = prompt,
+                    foreground=colors[2],
+                    background = colors[0]
                     ),
                 #### Window Name ####
                 widget.TextBox(
@@ -206,7 +207,7 @@ def init_widget_list():
                     background=colors[0],
                     padding=5,
                     format='{name}',
-                    empty_group_string='QARSlp',
+                    empty_group_string='qtile',
                     max_chars=45
                     ),
                 widget.Notify(
@@ -215,12 +216,6 @@ def init_widget_list():
                     foreground=colors[7],
                     background=colors[0]
                     ),
-                #### Spacer ####
-                # widget.Spacer(
-                #     length=bar.STRETCH,
-                #     background=colors[0],
-                #     foreground=colors[0]
-                #     ),
                 ### Layouts ####
                 widget.TextBox(
                     text="◢",

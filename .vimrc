@@ -36,6 +36,8 @@ call plug#begin('~/.vim/plugged')
     " Mobile App Development
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
+
+    Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
 colorscheme wal
