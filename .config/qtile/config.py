@@ -72,8 +72,28 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "d", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
-    # Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu"),
-    # Key([mod], "d", lazy.spawn("rofi -theme '~/.config/rofi/config2.rasi' -show drun"), desc="Spawn dmenu"),
+
+    # Launcher
+    Key([mod], "d", lazy.spawn("dmenu_run -p ' '"), desc="Spawn dmenu"),
+    # Key([mod], "d",
+    #     lazy.spawn("rofi -theme '~/.config/rofi/config2.rasi' -show drun"),
+    #     desc="Spawn rofi"
+    #    ),
+
+    # Brightness
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+
+    # Volume
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
+
+    # Media Control
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl -p ncspot play-pause")),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl -p ncspot next")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl -p ncspot previous")),
+    Key([], "XF86AudioStop", lazy.spawn("playerctl -p ncspot stop")),
 ]
 
 groups = [Group(i) for i in "1234567890"]
@@ -102,7 +122,19 @@ layout_theme = {
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.Max(),
+    layout.Max(**layout_theme),
+    layout.TreeTab(
+        sections=["Tabs"],
+        section_fontsize=15,
+        bg_color=colors[0],
+        active_bg=colors[7],
+        active_fg=colors[0],
+        inactive_bg=colors[0],
+        inactive_fg=colors[7],
+        padding_y=5,
+        panel_width=100,
+        **layout_theme
+    ),
     # layout.Columns(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -111,7 +143,6 @@ layouts = [
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
-    # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
