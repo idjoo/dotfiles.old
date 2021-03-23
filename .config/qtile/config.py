@@ -238,7 +238,7 @@ def init_widget_list():
                     background=colors[0],
                     padding=5,
                     format='{name}',
-                    empty_group_string='qtile',
+                    empty_group_string='cocatrip',
                     max_chars=45
                     ),
                 widget.Notify(
