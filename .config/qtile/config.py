@@ -74,11 +74,11 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 
     # Launcher
-    Key([mod], "d", lazy.spawn("dmenu_run -p ' '"), desc="Spawn dmenu"),
-    # Key([mod], "d",
-    #     lazy.spawn("rofi -theme '~/.config/rofi/config2.rasi' -show drun"),
-    #     desc="Spawn rofi"
-    #    ),
+    # Key([mod], "d", lazy.spawn("dmenu_run -p ' '"), desc="Spawn dmenu"),
+    Key([mod], "d",
+        lazy.spawn("rofi -theme '~/.config/rofi/launcher.rasi' -show drun"),
+        desc="Spawn rofi"
+       ),
 
     # Brightness
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
