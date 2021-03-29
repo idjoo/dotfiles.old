@@ -70,7 +70,7 @@ keys = [
 
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "d", lazy.spawncmd(),
+    Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
 
     # Launcher
