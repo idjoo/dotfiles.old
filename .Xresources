@@ -78,3 +78,5 @@ URxvt.keysym.C-j: font-size:decrease
 URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
+
+yeahconsole*term:urxvt

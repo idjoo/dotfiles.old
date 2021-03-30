@@ -3,3 +3,5 @@
 	name = cocatrip
 [core]
 	editor = vim
+[ini]
+	defaultBranch = master

@@ -80,6 +80,9 @@ keys = [
         desc="Spawn rofi"
        ),
 
+    # Flameshot
+    Key([mod],"Print", lazy.spawn('flameshot gui')),
+
     # Brightness
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
@@ -161,7 +164,7 @@ def init_widget_list():
                     foreground = colors[7]
                 ),
                 widget.Image(
-                    filename = "~/.config/qtile/icons/void.xpm",
+                    filename = "~/.config/qtile/icons/linux.png",
                     scale = "False",
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('rofi -theme "~/.config/rofi/launcher.rasi" -show drun')},
                 ),
@@ -261,7 +264,7 @@ def init_widget_list():
                     background=colors[2],
                     foreground=colors[0],
                     fontshadow=colors[7],
-                    text=""
+                    text=" " 
                     ),
                 widget.CurrentLayout(
                     background=colors[2],
@@ -304,7 +307,7 @@ def init_widget_list():
                     ),
                 widget.TextBox(
                     font='Font Awesome 5 Free',
-                    text=" ",
+                    text=" ",
                     foreground=colors[0],
                     background=colors[7],
                     padding=0,
@@ -329,7 +332,7 @@ def init_widget_list():
                 widget.TextBox(
                     font='Font Awesome 5 Free',
                     padding=1,
-                    text="",
+                    text=" ",
                     fontsize=15,
                     foreground=colors[7],
                     background=colors[0],
