@@ -12,7 +12,7 @@ set noswapfile
 set nobackup
 set incsearch
 "set termguicolors
-set scrolloff=8
+set scrolloff=10
 set noshowmode
 "set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dylanaraps/wal.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'tweekmonster/startuptime.vim'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 colorscheme wal
