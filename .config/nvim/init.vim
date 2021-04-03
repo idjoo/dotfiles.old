@@ -26,6 +26,9 @@ if has('mouse')
     set mouse=a
 endif
 
+" Remove whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
     Plug 'dylanaraps/wal.vim'
