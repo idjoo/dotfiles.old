@@ -2,6 +2,8 @@
 	email = cocainetrip@protonmail.com
 	name = cocatrip
 [core]
-	editor = vim
+	editor = nvim
 [ini]
+	defaultBranch = master
+[init]
 	defaultBranch = master
