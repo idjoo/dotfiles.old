@@ -29,6 +29,7 @@ endif
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
     Plug 'dylanaraps/wal.vim'
+    Plug 'vim-airline/vim-airline'
     Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
