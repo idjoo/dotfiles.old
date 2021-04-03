@@ -5,3 +5,5 @@
 	editor = vim
 [ini]
 	defaultBranch = master
+[init]
+	defaultBranch = master
