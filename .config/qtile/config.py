@@ -1,8 +1,5 @@
 import os
-import re
-import gi
 import json
-import socket
 import subprocess
 
 from typing import List  # noqa: F401
@@ -236,11 +233,9 @@ def init_widget_list():
                        text="◤",
                        fontsize=45,
                        padding=-2),
-        #### Notification ####
         widget.Prompt(prompt=prompt,
                       foreground=colors[2],
                       background=colors[0]),
-        #### Window Name ####
         widget.TextBox(font='Font Awesome 5 Free',
                        fontsize=12,
                        foreground=colors[7],
@@ -269,7 +264,6 @@ def init_widget_list():
                        fontshadow=colors[7],
                        text=" "),
         widget.CurrentLayout(background=colors[2], foreground=colors[0]),
-        #### Updates ####
         widget.TextBox(text='◢',
                        background=colors[2],
                        foreground=colors[3],
@@ -297,7 +291,6 @@ def init_widget_list():
             background=colors[3],
             colour_have_updates=colors[0],
             colour_no_updates=colors[0]),
-        #### Sound Control ####
         widget.TextBox(text='◢',
                        background=colors[3],
                        foreground=colors[7],
@@ -317,7 +310,6 @@ def init_widget_list():
                       background=colors[7],
                       foreground=colors[0],
                       fontshadow=colors[7]),
-        #### Date Clock Session Control ####
         widget.TextBox(text='◢',
                        background=colors[7],
                        foreground=colors[0],

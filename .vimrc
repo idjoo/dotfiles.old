@@ -1,44 +1,44 @@
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
+            \| PlugInstall --sync | source $MYVIMRC
+            \| endif
 
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
-    Plug 'lervag/vimtex'    
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-    Plug 'tmhedberg/SimpylFold'
-    Plug 'vim-scripts/indentpython.vim'
-    Plug 'vim-syntastic/syntastic'
-    Plug 'nvie/vim-flake8'
-    
-    " Nerd Tree and its plugin
-    Plug 'preservim/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    Plug 'scrooloose/nerdtree-project-plugin'
-    Plug 'PhilRunninger/nerdtree-buffer-ops'
+Plug 'lervag/vimtex'
+Plug 'jiangmiao/auto-pairs'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'nvie/vim-flake8'
 
-    Plug 'lilydjwg/colorizer'
-    Plug 'dylanaraps/wal.vim'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'tpope/vim-commentary'
-    
-    " Mobile App Development
-    Plug 'dart-lang/dart-vim-plugin'
-    Plug 'thosakwe/vim-flutter'
+" Nerd Tree and its plugin
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/nerdtree-project-plugin'
+Plug 'PhilRunninger/nerdtree-buffer-ops'
 
-    Plug 'tweekmonster/startuptime.vim'
-    Plug 'dkarter/bullets.vim'
+Plug 'lilydjwg/colorizer'
+Plug 'dylanaraps/wal.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'tpope/vim-commentary'
+
+" Mobile App Development
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+
+Plug 'tweekmonster/startuptime.vim'
+Plug 'dkarter/bullets.vim'
 call plug#end()
 
 colorscheme wal
@@ -86,19 +86,19 @@ set mouse=nicr
 "    \ set shiftwidth=2
 
 if has('python3')
-  python3 import sys
+    python3 import sys
 endif
 
 if has('filetype')
-  filetype indent plugin on
+    filetype indent plugin on
 endif
 
 if has('syntax')
-  syntax on
+    syntax on
 endif
 
 if has('mouse')
-  set mouse=a
+    set mouse=a
 endif
 
 " Mapping
@@ -114,8 +114,8 @@ vnoremap <Space> zf
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
+    au!
+    autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
 set splitbelow splitright
@@ -137,7 +137,7 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
 " Clipboard
 vnoremap <leader>y "+y
@@ -160,11 +160,11 @@ let g:fzf_action = { 'ctrl-e': 'edit' }
 
 " Bullets.vim
 let g:bullets_enabled_file_types = [
-    \ 'markdown',
-    \ 'text',
-    \ 'gitcommit',
-    \ 'scratch'
-    \]
+            \ 'markdown',
+            \ 'text',
+            \ 'gitcommit',
+            \ 'scratch'
+            \]
 
 "" NerdTree
 " Uncomment to autostart the NERDTree
