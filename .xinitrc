@@ -14,6 +14,6 @@ fi
 setxkbmap -option caps:swapescape
 xrdb .Xresources
 xsetroot -cursor_name left_ptr &
-xbacklight -set 40
+xbacklight -set 50
 
 exec qtile

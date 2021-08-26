@@ -114,6 +114,9 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl -p ncspot next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl -p ncspot previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl -p ncspot stop")),
+
+    # Toggle floating
+    Key([mod], "f", lazy.window.toggle_floating()),
 ]
 
 groups = [Group(i) for i in "1234567890"]

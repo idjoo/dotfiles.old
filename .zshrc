@@ -14,13 +14,21 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 # PS1="[%n@%m %~] "
 
-plugins=(git vi-mode aws)
+plugins=(
+    zsh-syntax-highlighting
+    zsh-history-substring-search
+    git
+    vi-mode
+    aws
+    zsh-completions
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export MANPATH="/usr/local/man:$MANPATH"
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -63,3 +71,16 @@ source ~/.profile
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias luamake=/home/cocatrip/lua-language-server/3rd/luamake/luamake
+
+# save path on cd
+function cd {
+    builtin cd $@
+    pwd > ~/.last_dir
+}
+
+# restore last saved path
+if [ -f ~/.last_dir ]
+    then cd `cat ~/.last_dir`
+fi

@@ -8,12 +8,14 @@ export PATH="$HOME/.telegram-palette-gen":$PATH
 export XDEB_PKGROOT="$XDG_CONFIG_HOME/xdeb"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
 export GOPATH="$HOME/.go"
+export PATH="$PATH:$HOME/.dotnet"
 
 # Startup
 
 # Set vim as default editor
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export DISPLAY=":0"
 
 # set PATH so it includes user's private ~/.local/bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
@@ -24,9 +26,9 @@ fi
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
