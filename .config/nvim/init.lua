@@ -4,7 +4,6 @@ require('options')
 
 -- plugin config
 require('plugin_config.nvim-compe')
-require('plugin_config.gruvbox')
 require('plugin_config.nerd-commenter')
 require('plugin_config.formatter-nvim')
 

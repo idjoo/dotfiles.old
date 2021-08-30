@@ -1,7 +1,8 @@
 local o, bo, wo = vim.o, vim.bo, vim.wo
 
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme everforest]]
 vim.cmd[[filetype plugin on]]
+vim.cmd[[set termguicolors]]
 
 -- global options
 o.hlsearch = false

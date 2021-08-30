@@ -48,7 +48,11 @@ eval $(thefuck --alias)
 eval $(thefuck --alias FUCK)
 
 # Alias
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
+alias ls='lsd'
+alias z='vifm'
+alias x='htop'
 
 # Remove mode switching delay.
 KEYTIMEOUT=5

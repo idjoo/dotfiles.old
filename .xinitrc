@@ -16,4 +16,4 @@ xrdb .Xresources
 xsetroot -cursor_name left_ptr &
 xbacklight -set 50
 
-exec qtile
+exec dbus-launch --sh-syntax --exit-with-session dwm
