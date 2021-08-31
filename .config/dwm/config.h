@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -17,6 +18,26 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
+
+/* d
+#define wal "/home/<USER>/.cache/wal/colors-wal-dwm.h"
+
+#if __has_include(wal)
+#include wal
+#else
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
+static const char col_urgborder[]   = "#ff0000";
+static const char *colors[][3]      = {
+d */
+   /*               fg         bg         border   */
+/* d
+   [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+   [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+   [SchemeUrg]  = { col_gray4, col_cyan,  col_urgborder  },
+#endif
+d */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -58,6 +79,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *volup[] = { "amixer", "-q", "sset", "Master", "5%+", NULL };
+static const char *voldown[] = { "amixer", "-q", "sset", "Master", "5%-", NULL };
+static const char *mute[] = { "amixer", "-q", "-D", "pulse", "sset", "Master", "toggle", NULL };
+static const char *lightup[] = { "xbacklight", "+", "10", NULL };
+static const char *lightdown[] = { "xbacklight", "-", "10", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,6 +120,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+    { 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = volup } },
+    { 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = voldown } },
+    { 0,             XF86XK_AudioMute,         spawn,          {.v = mute } },
+    { 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = lightup} },
+    { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = lightdown} },
 };
 
 /* button definitions */
