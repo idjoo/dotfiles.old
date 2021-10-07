@@ -12,6 +12,7 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'jiangmiao/auto-pairs'
+  use 'kabouzeid/nvim-lspinstall'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
   use 'sainnhe/everforest'
@@ -19,6 +20,8 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   use 'preservim/nerdcommenter'
+  use 'thugcee/nvim-map-to-lua'
   use 'mhartington/formatter.nvim'
+  use 'fladson/vim-kitty'
 end)
 

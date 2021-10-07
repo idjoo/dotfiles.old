@@ -51,7 +51,7 @@ eval $(thefuck --alias FUCK)
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias ls='lsd'
-alias z='vifm'
+alias z='vifm -c za .'
 alias x='htop'
 
 # Remove mode switching delay.
@@ -78,13 +78,13 @@ source ~/.profile
 
 alias luamake=/home/cocatrip/lua-language-server/3rd/luamake/luamake
 
-# save path on cd
-function cd {
-    builtin cd $@
-    pwd > ~/.last_dir
-}
-
-# restore last saved path
-if [ -f ~/.last_dir ]
-    then cd `cat ~/.last_dir`
-fi
+# # save path on cd
+# function cd {
+#     builtin cd $@
+#     pwd > ~/.last_dir
+# }
+#
+# # restore last saved path
+# if [ -f ~/.last_dir ]
+#     then cd `cat ~/.last_dir`
+# fi

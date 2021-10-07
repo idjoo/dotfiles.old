@@ -1,7 +1,9 @@
 ##### PATH #####
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:~/.cabal/bin:/var/lib/flatpak/exports/share/applications
+
 export GOPATH="$HOME/.go"
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Startup
 

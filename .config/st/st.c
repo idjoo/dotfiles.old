@@ -153,7 +153,6 @@ typedef struct {
 } STREscape;
 
 static void execsh(char *, char **);
-static char *getcwd_by_pid(pid_t pid);
 static void stty(char **);
 static void sigchld(int);
 static void ttywriteraw(const char *, size_t);

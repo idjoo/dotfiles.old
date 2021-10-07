@@ -12,11 +12,11 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_green[]        = "#738f54";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_green,  col_green  },
 };
 
 /* d
@@ -47,9 +47,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class            instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "zoom",           NULL,       NULL,       1 << 7,       1,           -1 },
+	{ "TelegramDesktop",NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -77,13 +79,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_green, "-sf", col_gray4, NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *volup[] = { "amixer", "-q", "sset", "Master", "5%+", NULL };
 static const char *voldown[] = { "amixer", "-q", "sset", "Master", "5%-", NULL };
 static const char *mute[] = { "amixer", "-q", "-D", "pulse", "sset", "Master", "toggle", NULL };
 static const char *lightup[] = { "xbacklight", "+", "10", NULL };
 static const char *lightdown[] = { "xbacklight", "-", "10", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -125,6 +128,7 @@ static Key keys[] = {
     { 0,             XF86XK_AudioMute,         spawn,          {.v = mute } },
     { 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = lightup} },
     { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = lightdown} },
+    { 0,                            XK_Print,  spawn,          {.v = screenshot} },
 };
 
 /* button definitions */

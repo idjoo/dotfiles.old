@@ -7,37 +7,67 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
 !! Colorscheme
-#define mybg    [50]#0F1E24
-#define myfg    #dce7bf
-#define mycl0   #0F1E24
-#define mycl1   #DECC12
-#define mycl2   #78B389
-#define mycl3   #91CC97
-#define mycl4   #B1D894
-#define mycl5   #A6D9B3
-#define mycl6   #C3DE92
-#define mycl7   #dce7bf
-#define mycl8   #9aa185
-#define mycl9   #DECC12
-#define mycl10  #78B389
-#define mycl11  #91CC97
-#define mycl12  #B1D894
-#define mycl13  #A6D9B3
-#define mycl14  #C3DE92
-#define mycl15  #dce7bf
+#define bg      #2d392c
+#define fg      #c6cac4
+#define color0  #60695f
+#define color1  #e29288
+#define color2  #a4cc78
+#define color3  #dbb66d
+#define color4  #7eb9d0
+#define color5  #c08da4
+#define color6  #71ca98
+#define color7  #c6cac4
+#define color8  #7a8178
+#define color9  #e2a299
+#define color10 #b0d08c
+#define color11 #dcbf83
+#define color12 #92c1d3
+!define color13 #71ca98
+#define color14 #87cfa6
+#define color15 #e0e2dd
 
-!!! Rofi !!!
-! rofi.color-window: mybg, mybg, mybg
-! rofi.color-normal: mybg, myfg, mybg, mybg, mycl2
-! rofi.color-active: mybg, myfg, mybg, mybg, mycl2
-! rofi.color-urgent: mybg, myfg, mybg, mybg, mycl2
+!! Colorscheme
+! general
+*.background: bg
+*.foreground: fg
 
+! blacks
+*.color0: color0
+*.color8: color8
+
+! reds
+*.color1: color1
+*.color9: color9
+
+! greens
+*.color2: color2
+*.color10: color10
+
+! yellows
+*.color3: color3
+*.color11: color11
+
+! blues
+*.color4: color4
+*.color12: color12
+
+! magentas
+*.color5: color5
+*.color13: color6
+
+! cyans
+*.color6: color6
+*.color14: color14
+
+! whites
+*.color7: color7
+*.color15: color15
 
 !!! URxvt !!!
-URxvt.font: xft:TerminessTTF Nerd Font Mono:size=12:antialias=true:hinting=true
-URxvt.boldFont: xft:TerminessTTF Nerd Font Mono:style=Bold:size=12:antialias=true:hinting=true
-URxvt.italicFont: xft:TerminessTTF Nerd Font Mono:style=Italic:size=12:antialias=true:hinting=true
-URxvt.boldItalicfont: xft:TerminessTTF Nerd Font Mono:style=Bold Italic:size=12:antialias=true:hinting=true
+URxvt.font: xft:GoMono Nerd Font Mono:size=9
+!URxvt.boldFont: Terminess:style=Bold:size=12:antialias=true:hinting=false
+!URxvt.italicFont: Terminess:style=Italic:size=12:antialias=true:hinting=false
+!URxvt.boldItalicfont: Terminess:style=Bold Italic:size=12:antialias=true:hinting=false
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
@@ -60,13 +90,13 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Left: \033[1;5D
 
 !! Copy Paste & Other Extensions
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,resize-font
+!! URxvt.perl-ext-common: default,clipboard-osc,keyboard-select,font-size
 ! Clipboard
-URxvt.copyCommand: xclip -i -selection clipboard
-URxvt.pasteCommand: xclip -o -selection clipboard
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.copyCommand   : xclip -i -selection clipboard
+URxvt.pasteCommand  : xclip -o -selection clipboard
+URxvt.keysym.M-c    : perl:clipboard:copy
+URxvt.keysym.M-v    : perl:clipboard:paste
+URxvt.keysym.M-C-v  : perl:clipboard:paste_escaped
 ! Keyboard Select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
@@ -75,8 +105,12 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.C-k: font-size:increase
 URxvt.keysym.C-j: font-size:decrease
 
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: vieb
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
 
-yeahconsole*term:urxvt
+!!! Rofi !!!
+! rofi.color-window: mybg, mybg, mybg
+! rofi.color-normal: mybg, myfg, mybg, mybg, mycl2
+! rofi.color-active: mybg, myfg, mybg, mybg, mycl2
+! rofi.color-urgent: mybg, myfg, mybg, mybg, mycl2

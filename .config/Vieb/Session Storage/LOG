@@ -1,3 +1,5 @@
-2021/08/30-12:58:22.417 d15 Reusing MANIFEST /home/ct/.config/Vieb/Session Storage/MANIFEST-000001
-2021/08/30-12:58:22.417 d15 Recovering log #3
-2021/08/30-12:58:22.417 d15 Reusing old log /home/ct/.config/Vieb/Session Storage/000003.log 
+2021/10/01-13:35:04.139 3070 Reusing MANIFEST /home/ct/.config/Vieb/Session Storage/MANIFEST-000001
+2021/10/01-13:35:04.139 3070 Recovering log #7
+2021/10/01-13:35:04.139 3070 Reusing old log /home/ct/.config/Vieb/Session Storage/000007.log 
+2021/10/01-13:35:06.529 3062 Level-0 table #11: started
+2021/10/01-13:35:06.610 3062 Level-0 table #11: 25983 bytes OK

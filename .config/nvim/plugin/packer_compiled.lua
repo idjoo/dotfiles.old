@@ -62,43 +62,55 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-pairs"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/auto-pairs"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
   everforest = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/everforest"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/everforest"
   },
   ["formatter.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
   nerdcommenter = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nerdcommenter"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
+  ["nvim-map-to-lua"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-map-to-lua"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["sacredforest-vim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/sacredforest-vim"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/sacredforest-vim"
+  },
+  ["vim-kitty"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-kitty"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 

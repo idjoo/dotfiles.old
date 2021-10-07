@@ -1,2 +1,3 @@
-2021/08/30-08:24:06.401 2a2 Creating DB /home/ct/.config/Vieb/Partitions/main/shared_proto_db since it was missing.
-2021/08/30-08:24:06.516 2a2 Reusing MANIFEST /home/ct/.config/Vieb/Partitions/main/shared_proto_db/MANIFEST-000001
+2021/09/01-15:11:20.275 f99 Reusing MANIFEST /home/ct/.config/Vieb/Partitions/main/shared_proto_db/MANIFEST-000001
+2021/09/01-15:11:20.275 f99 Recovering log #3
+2021/09/01-15:11:20.275 f99 Reusing old log /home/ct/.config/Vieb/Partitions/main/shared_proto_db/000003.log 
