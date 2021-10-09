@@ -13,7 +13,7 @@ o.writebackup = false
 o.incsearch = true
 o.scrolloff = 10
 o.showmode = false
-o.completeopt = "menuone,noinsert,noselect"
+o.completeopt = "menu,menuone,noselect"
 o.colorcolumn = '80'
 o.signcolumn = 'yes'
 o.cmdheight = 2
@@ -29,7 +29,7 @@ wo.wrap = false
 
 -- buffer-local options
 bo.tabstop = 4
-bo.softtabstop = 4
+-- bo.softtabstop = 4
 bo.shiftwidth = 4
 bo.expandtab = true
 bo.smartindent = true

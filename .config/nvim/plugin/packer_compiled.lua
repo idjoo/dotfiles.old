@@ -44,6 +44,15 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
+local package_path_str = "/home/ct/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/ct/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/ct/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/ct/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/ct/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+if not string.find(package.path, package_path_str, 1, true) then
+  package.path = package.path .. ';' .. package_path_str
+end
+
+if not string.find(package.cpath, install_cpath_pattern, 1, true) then
+  package.cpath = package.cpath .. ';' .. install_cpath_pattern
+end
 
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
@@ -64,21 +73,33 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  everforest = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/ct/.local/share/nvim/site/pack/packer/start/everforest"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nerdcommenter"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -92,13 +113,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-map-to-lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
-  ["sacredforest-vim"] = {
+  ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/ct/.local/share/nvim/site/pack/packer/start/sacredforest-vim"
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-kitty"] = {
     loaded = true,

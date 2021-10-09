@@ -13,15 +13,17 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 # PS1="[%n@%m %~] "
+#
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 plugins=(
     zsh-syntax-highlighting
-    zsh-history-substring-search
-    git
+    zsh-autosuggestions
+    fzf-tab
+    fzf
     vi-mode
     aws
-    zsh-completions
-    zsh-autosuggestions
+    git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -33,11 +35,17 @@ bindkey -M vicmd 'j' history-substring-search-down
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+# Fix kitty ssh
+current_terminal="$(ps -p$PPID -o cmd=)"
+if [[ $current_terminal =~ 'kitty' ]]; then
+    alias ssh="kitty +kitten ssh";
+fi
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+    export EDITOR='nvim'
 else
-  export EDITOR='vim'
+    export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -53,6 +61,7 @@ alias vim='nvim'
 alias ls='lsd'
 alias z='vifm -c za .'
 alias x='htop'
+alias f='toggle-fzf-tab'
 
 # Remove mode switching delay.
 KEYTIMEOUT=5
