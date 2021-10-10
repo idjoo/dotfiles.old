@@ -89,13 +89,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
+  kommentary = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/kommentary"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/lualine.nvim"
-  },
-  nerdcommenter = {
-    loaded = true,
-    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nerdcommenter"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -121,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -133,9 +137,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-go"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-go"
+  },
   ["vim-kitty"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-kitty"
+  },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
   ["vim-vsnip"] = {
     loaded = true,

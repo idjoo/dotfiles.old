@@ -1,10 +1,7 @@
-require('plugins')
-require('mappings')
-require('options')
-require('lsp')
+-- Leader
+vim.g.mapleader = ' '
 
--- plugin config
-require('plugin_config.nvim-cmp')
-require('plugin_config.nerd-commenter')
-require('plugin_config.formatter-nvim')
-require('plugin_config.nvim-map-to-lua')
+-- Modules
+require('mappings')
+require('plugins')
+require('settings')
