@@ -101,6 +101,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
