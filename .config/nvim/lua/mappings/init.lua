@@ -16,6 +16,13 @@ vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("n", "<leader>c", "<Plug>kommentary_motion_default", {})
 vim.api.nvim_set_keymap("x", "<leader>c", "<Plug>kommentary_visual_default", {})
 
+-- Bufferline
+vim.api.nvim_set_keymap("n", "<leader>b]", ":BufferLineCycleNext<CR>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>b[", ":BufferLineCyclePrev<CR>", { silent = true, noremap = true })
+
+-- Bufdelete
+vim.api.nvim_set_keymap("n", "<leader>bd", ":Bdelete<CR>", { silent = true, noremap = true })
+
 vim.cmd([[
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufNewFile *.go 0r ~/.config/nvim/templates/skeleton.go

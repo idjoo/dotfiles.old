@@ -73,6 +73,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["bufdelete.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/bufdelete.nvim"
+  },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/cmp-buffer"

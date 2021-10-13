@@ -29,11 +29,18 @@ return require('packer').startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = 'nvim-lua/plenary.nvim'
     }
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+    use {
+        'akinsho/bufferline.nvim',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+            'famiu/bufdelete.nvim'
+        }
     }
 
     -- Languages

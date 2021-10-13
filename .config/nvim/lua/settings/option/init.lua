@@ -2,10 +2,10 @@ local o, bo, wo = vim.o, vim.bo, vim.wo
 
 vim.cmd([[
     filetype plugin on
-    set termguicolors
 ]])
 
 -- global options
+o.termguicolors = true
 o.hlsearch = false
 o.hidden = true
 o.writebackup = false
