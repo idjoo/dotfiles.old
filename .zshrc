@@ -41,6 +41,17 @@ if [[ $current_terminal =~ 'kitty' ]]; then
     alias ssh="kitty +kitten ssh";
 fi
 
+# pip zsh completion
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+}
+compctl -K _pip_completion pip
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nvim'
@@ -87,13 +98,13 @@ source ~/.profile
 
 alias luamake=/home/cocatrip/lua-language-server/3rd/luamake/luamake
 
-# # save path on cd
-# function cd {
-#     builtin cd $@
-#     pwd > ~/.last_dir
-# }
-#
-# # restore last saved path
-# if [ -f ~/.last_dir ]
-#     then cd `cat ~/.last_dir`
-# fi
+# save path on cd
+function cd {
+    builtin cd $@
+    pwd > ~/.last_dir
+}
+
+# restore last saved path
+if [ -f ~/.last_dir ]
+    then cd `cat ~/.last_dir`
+fi

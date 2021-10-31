@@ -141,6 +141,14 @@ ins_left {
   color = {fg = colors.magenta, gui = 'bold'}
 }
 
+ins_left {
+  function()
+    local tree = vim.api.nvim_command('echo nvim_treesitter#statusline(40)')
+    return tree
+  end,
+  color = {fg = colors.magenta, gui = 'bold'}
+}
+
 ins_left {'location'}
 
 ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}

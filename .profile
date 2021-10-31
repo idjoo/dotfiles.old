@@ -4,7 +4,6 @@ export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:~/.caba
 
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
 # Startup
 
 # Set vim as default editor

@@ -22,8 +22,3 @@ vim.api.nvim_set_keymap("n", "<leader>b[", ":BufferLineCyclePrev<CR>", { silent 
 
 -- Bufdelete
 vim.api.nvim_set_keymap("n", "<leader>bd", ":Bdelete<CR>", { silent = true, noremap = true })
-
-vim.cmd([[
-autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufNewFile *.go 0r ~/.config/nvim/templates/skeleton.go
-]])
