@@ -1,19 +1,13 @@
 require("formatter").setup ({
     filetype = {
-        lua = {
-            function()
-                return {
-                    exe = "luafmt",
-                    args = {"--indent-count", 2, "--stdin"},
-                    stdin = true
-                }
-            end
-        },
         cpp = {
             function()
                 return {
-                    exe = "clang-format",
-                    args = {"--assume-filename", vim.api.nvim_buf_get_name(0)},
+                    exe = "uncrustify",
+                    args = {
+                        "-c", "$HOME/.config/uncrustify/config.cfg",
+                        "-f", vim.api.nvim_buf_get_name(0)
+                    },
                     stdin = true,
                     cwd = vim.fn.expand("%:p:h")
                 }
@@ -22,11 +16,10 @@ require("formatter").setup ({
         c = {
             function()
                 return {
-                    exe = "clang-format",
+                    exe = "uncrustify",
                     args = {
-                        "--style='{IndentWidth: 4}'",
-                        "--assume-filename",
-                        vim.api.nvim_buf_get_name(0)
+                        "-c", "$HOME/.config/uncrustify/config.cfg",
+                        "-f", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
                     cwd = vim.fn.expand("%:p:h")

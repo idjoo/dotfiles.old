@@ -73,6 +73,7 @@ alias ls='lsd'
 alias z='vifm -c za .'
 alias x='htop'
 alias f='toggle-fzf-tab'
+alias scrcpy='scrcpy --render-driver=software'
 
 # Remove mode switching delay.
 KEYTIMEOUT=5
