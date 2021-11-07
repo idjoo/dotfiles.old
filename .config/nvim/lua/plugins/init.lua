@@ -42,6 +42,7 @@ return require('packer').startup(function()
             'famiu/bufdelete.nvim'
         }
     }
+    use 'github/copilot.vim'
 
     -- Languages
     use 'fatih/vim-go'

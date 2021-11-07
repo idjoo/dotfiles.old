@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/copilot.vim"
+  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/formatter.nvim"
