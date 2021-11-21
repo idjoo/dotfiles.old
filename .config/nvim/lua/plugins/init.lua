@@ -13,14 +13,15 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use 'jiangmiao/auto-pairs'
+
     use 'kabouzeid/nvim-lspinstall'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
+
     use 'b3nj5m1n/kommentary'
     use 'thugcee/nvim-map-to-lua'
     use 'mhartington/formatter.nvim'

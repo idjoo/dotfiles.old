@@ -24,5 +24,5 @@ xbacklight -set 50
 nitrogen --restore &
 
 # exec dbus-launch --sh-syntax --exit-with-session qtile
-exec dwm
 # exec herbstluftwm --locked
+exec dwm
