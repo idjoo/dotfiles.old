@@ -14,8 +14,8 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'jiangmiao/auto-pairs'
 
-    use 'kabouzeid/nvim-lspinstall'
     use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/nvim-cmp'
@@ -28,6 +28,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'sheerun/vim-polyglot'
     use 'norcalli/nvim-colorizer.lua'
+    use 'vimwiki/vimwiki'
     use {
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
@@ -46,7 +47,6 @@ return require('packer').startup(function()
     use 'github/copilot.vim'
 
     -- Languages
-    use 'fatih/vim-go'
     use 'fladson/vim-kitty'
 
     -- Colorscheme

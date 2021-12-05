@@ -1,5 +1,6 @@
--- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+local nvim_lsp = require('lspconfig')
 
 cmp.setup({
     snippet = {
@@ -18,24 +19,6 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
-        --[[ ['<Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-            elseif luasnip.expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-            else
-                fallback()
-            end
-        end,
-        ['<S-Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
-            elseif luasnip.jumpable(-1) then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-            else
-                fallback()
-            end
-        end, ]]
     },
     sources = {
         { name = 'nvim_lsp' },
@@ -44,5 +27,3 @@ cmp.setup({
     }
 })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)

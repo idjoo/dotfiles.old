@@ -1,3 +1,5 @@
+vim.o.termguicolors = true
+
 -- Leader
 vim.g.mapleader = ' '
 

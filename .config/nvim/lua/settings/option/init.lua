@@ -5,7 +5,6 @@ vim.cmd([[
 ]])
 
 -- global options
-o.termguicolors = true
 o.hlsearch = false
 o.hidden = true
 o.writebackup = false
