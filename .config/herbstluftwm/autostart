@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-
-# $HOME/.config/herbstluftwm/go/herbstluft-go
-$HOME/.config/herbstluftwm/lua/autostart.lua
