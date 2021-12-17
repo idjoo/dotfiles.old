@@ -1,0 +1,9 @@
+format='\[ $directory\] (\[ $all\] )$character '
+right_format=''
+add_newline = false
+
+[line_break]
+disabled = true
+
+[character]
+format='[](green bold)'
