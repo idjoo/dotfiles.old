@@ -19,7 +19,6 @@ source $HOME/.profile
 set -o vi
 
 # alias
-# alias z='vifm'
 alias x='htop'
 
 # save path on cd
