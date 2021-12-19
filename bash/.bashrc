@@ -20,6 +20,9 @@ set -o vi
 
 # alias
 alias x='htop'
+alias ls='ls --color=always'
+alias du='du -hs'
+alias open='xdg-open'
 
 # save path on cd
 function cd {
