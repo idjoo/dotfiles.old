@@ -23,6 +23,7 @@ alias x='htop'
 alias ls='ls --color=always'
 alias du='du -hs'
 alias open='xdg-open'
+alias icat='kitty +kitten icat'
 
 # save path on cd
 function cd {
