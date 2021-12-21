@@ -20,21 +20,21 @@ herbstclient --idle "tag_*" 2>/dev/null | {
                 case ${i:0:1} in
                     '.')
                         # the tag is empty
-						            # echo "%{F#345F0C} 0%{F-}"
-							        echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#4c594c} ${i:1} %{B-}%{A}"
+						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#4c594c} ${i:1} %{B-}%{A}"
+						echo "%{F#4C594C}  %{F-}"
                         ;;
                     ':')
                         # the tag is not empty
-						            # echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{F#000000}%{B#608B4E} [${i:1}] %{F-}%{B-}%{A}"
-						            echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#354535} ${i:1} %{B-}%{A}"
+						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#354535} ${i:1} %{B-}%{A}"
+						echo "%{F#4C594C}  %{F-}"
                         ;;
                     '+')
                         # the tag is viewed on the specified MONITOR, but this monitor is not focused.
                         ;;
                     '#')
                         # the tag is viewed on the specified MONITOR and it is focused.
-							          # echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{F#000000}%{B#569CD6}  ${i:1}  %{F-}%{B-}%{A}"
-							          echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#738f54} ${i:1} %{B-}%{A}"
+						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#738f54} ${i:1} %{B-}%{A}"
+						echo "%{F#738F54}  %{F-}"
                         ;;
                     '-')
                         # the tag is viewed on a different MONITOR, but this monitor is not focused.
@@ -44,8 +44,8 @@ herbstclient --idle "tag_*" 2>/dev/null | {
                         ;;
                     '!')
                         # urgent window
-												# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{F#000000}%{B#D16969} [${i:1}] %{F-}%{B-}%{A}"
-												echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#D16969} ${i:1} %{B-}%{A}"
+						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#D16969} ${i:1} %{B-}%{A}"
+						echo "%{F#D16969}  %{F-}"
                         ;;
                 esac
 
