@@ -185,7 +185,7 @@ full-at = 99
 format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 
-format-full-prefix = " "
+format-full-prefix = "  "
 format-full-prefix-foreground = #b0d08c
 
 animation-charging-0 = " "
