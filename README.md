@@ -1,7 +1,9 @@
-My dotfiles repository.
+# My dotfiles repository.
+
 ![home](home.png)
 ![home-alt](home-alt.png)
-Details:
+
+## Details:
 + **OS**: Gentoo
 
 + **WM**: [herbstluftwm](https://herbstluftwm.org/)
