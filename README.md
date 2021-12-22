@@ -1,6 +1,6 @@
 My dotfiles repository.
-![](home.png)
-![](home-alt.png)
+![home](home.png)
+![home-alt](home-alt.png)
 Details:
 + **OS**: Gentoo
 
