@@ -63,4 +63,3 @@ herbstclient --idle "tag_*" 2>/dev/null | {
     read -r || break
 done
 } 2>/dev/null
-
