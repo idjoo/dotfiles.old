@@ -50,4 +50,6 @@ return require('packer').startup(function()
 
     -- Colorscheme
     use 'cocatrip/onedark.nvim'
+
+    use 'tpope/vim-fugitive'
 end)

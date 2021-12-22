@@ -1,4 +1,3 @@
+My dotfiles repository.
 ![](home.png)
 ![](home-alt.png)
-
-My dotfiles repository.

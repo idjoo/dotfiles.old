@@ -144,11 +144,6 @@ _G.packer_plugins = {
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-map-to-lua"] = {
-    loaded = true,
-    path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-map-to-lua",
-    url = "https://github.com/thugcee/nvim-map-to-lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -178,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-kitty"] = {
     loaded = true,
