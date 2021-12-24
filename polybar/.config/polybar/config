@@ -69,12 +69,13 @@ exec = echo ""
 [module/date]
 type = internal/date
 interval = 5
+format-prefix = "  "
 
-date = "%d-%b-%y"
+date = "%A, %d-%b-%y"
 time = "%H:%M"
 
-label = " %time% %date% "
-label-background = #4C594C
+label = " %date% %time% "
+format-background = #4C594C
 
 [module/hlwm]
 type = custom/script

@@ -17,6 +17,12 @@ source $HOME/.profile
 
 # options
 set -o vi
+complete -cf doas
+if [[ $- == *i* ]]
+then
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+fi
 
 # alias
 alias x='htop'
