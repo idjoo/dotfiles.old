@@ -1,3 +1,55 @@
+def_key "j"
+    scroll_down
+def_key "k"
+    scroll_up
+def_key "h"
+    previous_column
+def_key "l"
+    next_column
+def_key "h"
+  jump_to_parent_directory
+def_key "l"
+  enter_directory
+def_key "l"
+  run_action
+def_key "l"
+  play_item
+
+def_key "ctrl-u"
+    page_up
+def_key "ctrl-d"
+    page_down
+
+def_key "."
+    show_lyrics
+
+def_key "n"
+    next_found_item
+
+def_key "N"
+    previous_found_item
+
+def_key "m"
+  show_media_library
+
+def_key "m"
+  toggle_media_library_columns_mode
+
+def_key "t"
+  show_tag_editor
+
+def_key "v"
+  show_visualizer
+
+def_key "G"
+  move_end
+
+def_key "g"
+  move_home
+
+def_key "x"
+  delete_playlist_items
+
 ##############################################################
 ## This is the example bindings file. Copy it to            ##
 ## ~/.ncmpcpp/bindings or $XDG_CONFIG_HOME/ncmpcpp/bindings ##
@@ -401,56 +453,3 @@
 #	find
 #def_key "f"
 #	find_item_forward
-
-def_key "j"
-    scroll_down
-def_key "k"
-    scroll_up
-def_key "h"
-    previous_column
-def_key "l"
-    next_column
-def_key "h"
-  jump_to_parent_directory
-def_key "l"
-  enter_directory
-def_key "l"
-  run_action
-def_key "l"
-  play_item
-
-def_key "ctrl-u"
-    page_up
-def_key "ctrl-d"
-    page_down
-
-
-def_key "."
-    show_lyrics
-
-def_key "n"
-    next_found_item
-
-def_key "N"
-    previous_found_item
-
-def_key "m"
-  show_media_library
-
-def_key "m"
-  toggle_media_library_columns_mode
-
-def_key "t"
-  show_tag_editor
-
-def_key "v"
-  show_visualizer
-
-def_key "G"
-  move_end
-
-def_key "g"
-  move_home
-
-def_key "x"
-  delete_playlist_items
