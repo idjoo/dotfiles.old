@@ -18,6 +18,7 @@
 #done &
 
 setxkbmap -option caps:swapescape
+mpd &
 #xrdb .Xresources
 #xsetroot -cursor_name left_ptr &
 #xbacklight -set 50

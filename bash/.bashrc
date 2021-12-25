@@ -26,6 +26,7 @@ fi
 
 # alias
 alias x='htop'
+alias c='ncmpcpp'
 alias ls='ls --color=always'
 alias du='du -hs'
 alias open='xdg-open'
