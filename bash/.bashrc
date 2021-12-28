@@ -38,7 +38,7 @@ alias icat='kitty +kitten icat'
 
 # save path on cd
 function cd {
-    builtin cd $@
+    builtin cd "${@:1:1}"
     pwd > ~/.last_dir
 }
 
