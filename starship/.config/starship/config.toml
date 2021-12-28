@@ -6,4 +6,8 @@ add_newline = false
 disabled = true
 
 [character]
-format='[](green bold)'
+format = '[](green bold)'
+
+[directory]
+truncation_length = 1
+fish_style_pwd_dir_length = 2
