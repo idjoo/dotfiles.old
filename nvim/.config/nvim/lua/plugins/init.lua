@@ -49,7 +49,7 @@ return require('packer').startup(function()
     use 'fladson/vim-kitty'
 
     -- Colorscheme
-    use 'cocatrip/onedark.nvim'
+    use 'cocatrip/idjo.nvim'
 
     use 'tpope/vim-fugitive'
 end)

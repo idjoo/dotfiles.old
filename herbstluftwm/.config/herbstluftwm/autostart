@@ -34,7 +34,8 @@ hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 hc keybind XF86AudioMute spawn amixer set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer sset Master 10%-
 hc keybind XF86AudioRaiseVolume spawn amixer sset Master 10%+
-hc keybind Print spawn flameshot gui
+hc keybind Print spawn flameshot full
+hc keybind $Mod-Print spawn flameshot gui
 hc keybind XF86Launch1 spawn dmcalc
 
 # basic movement in tiling and floating mode

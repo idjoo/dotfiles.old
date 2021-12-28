@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["idjo.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/idjo.nvim",
+    url = "https://github.com/cocatrip/idjo.nvim"
+  },
   kommentary = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/kommentary",
@@ -153,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/ct/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/cocatrip/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

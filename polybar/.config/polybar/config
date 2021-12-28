@@ -70,6 +70,7 @@ exec = echo ""
 type = internal/date
 interval = 5
 format-prefix = "  "
+format-prefix-foreground = #92c1d3
 
 date = "%A, %d-%b-%y"
 time = "%H:%M"
