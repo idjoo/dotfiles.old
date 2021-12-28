@@ -18,6 +18,8 @@
 #done &
 
 setxkbmap -option caps:swapescape
+xset s off
+xset -dpms
 mpd &
 #xrdb .Xresources
 #xsetroot -cursor_name left_ptr &
