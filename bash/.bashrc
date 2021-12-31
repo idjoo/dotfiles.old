@@ -34,18 +34,17 @@ alias rm='rm -v'
 alias cp='cp -v'
 alias du='du -hs'
 alias open='xdg-open'
-alias icat='kitty +kitten icat'
 
 # save path on cd
-function cd {
-    builtin cd "${@:1:1}"
-    pwd > ~/.last_dir
-}
+# function cd {
+#     builtin cd "${@:1:1}"
+#     pwd > ~/.last_dir
+# }
 
 # restore last saved path
-if [ -f ~/.last_dir ]
-    then cd `cat ~/.last_dir`
-fi
+# if [ -f ~/.last_dir ]
+#     then cd `cat ~/.last_dir`
+# fi
 
 # No double entries in the shell history.
 export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"

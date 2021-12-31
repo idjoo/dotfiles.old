@@ -1,5 +1,5 @@
-format='\[ $directory\] (\[ $all\] )$character '
-right_format=''
+format='\[ $directory\] $character '
+right_format='\[ $all\]'
 add_newline = false
 
 [line_break]

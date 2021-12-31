@@ -19,14 +19,14 @@ xsetroot -solid '#5A8E3A'
 hc keyunbind --all
 
 # keybindings
-# if you have a super key you will be much happier with Mod set to Mod4
-Mod=Mod4   # Use the super key as the main modifier
-Alt=Mod1    # Use alt as the main modifier
+Mod=Mod4
+Alt=Mod1
 
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
-hc keybind $Mod-Return spawn "${TERMINAL:-kitty}" # use your $TERMINAL with xterm as fallback
+# hc keybind $Mod-Return spawn "${TERMINAL:-kitty}" 
+hc keybind $Mod-Return spawn "${TERMINAL:-alacritty}" 
 
 # xf86
 hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
@@ -92,7 +92,7 @@ hc keybind $Mod-Shift-m set_attr clients.focus.minimized true
 hc keybind $Mod-Control-m jumpto last-minimized
 hc keybind $Mod-p pseudotile toggle
 
-hc keybind $Mod-d spawn dmenu_run_hlwm 
+hc keybind $Mod-d spawn dmenu_run 
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
@@ -193,10 +193,11 @@ hc unlock
 # wallpaper
 feh --bg-fill ~/Pictures/.wallpaper/*.jpg
 
-# find the panel
+# panel
 panel=$HOME/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(hc list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" "$monitor" &
-done
+$panel &
+# [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+# for monitor in $(hc list_monitors | cut -d: -f1) ; do
+#     # start it on each monitor
+#     "$panel" "$monitor" &
+# done
