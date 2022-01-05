@@ -6,7 +6,7 @@ add_newline = false
 disabled = true
 
 [character]
-format = '[](green bold)'
+format = '[](green bold)'
 
 [directory]
 truncation_length = 1

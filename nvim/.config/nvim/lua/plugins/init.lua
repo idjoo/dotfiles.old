@@ -12,7 +12,7 @@ end
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs'
 
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'

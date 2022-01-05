@@ -86,10 +86,10 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 # layouting
 hc keybind $Mod-r remove
 hc keybind $Mod-s floating toggle
-hc keybind $Mod-f fullscreen toggle
-hc keybind $Mod-Shift-f set_attr clients.focus.floating toggle
+hc keybind $Mod-f set_attr clients.focus.floating toggle
 hc keybind $Mod-Shift-m set_attr clients.focus.minimized true
 hc keybind $Mod-Control-m jumpto last-minimized
+hc keybind $Mod-Shift-f fullscreen toggle
 hc keybind $Mod-p pseudotile toggle
 
 hc keybind $Mod-d spawn dmenu_run 
@@ -165,6 +165,7 @@ hc rule class=linelauncher.exe floating=on
 hc rule class=Firefox tag=9
 hc rule class=zoom tag=8 floating=on
 hc rule class=TelegramDesktop tag=7
+hc rule class=discord tag=6
 hc rule focus=on # normally focus new clients
 hc rule floatplacement=smart
 #hc rule focus=off # normally do not focus new clients
