@@ -70,9 +70,9 @@ zsh_add_plugin "zsh-users/zsh-completions"
 # alias
 alias x='htop'
 alias c='ncmpcpp'
-alias ls='ls --color=always'
-alias ll='ls -l'
-alias la='ls -a'
+alias ls='exa --group-directories-first --color=always'
+alias ll='exa -l'
+alias la='exa -a'
 alias rm='rm -v'
 alias cp='cp -v'
 alias du='du -hs'
