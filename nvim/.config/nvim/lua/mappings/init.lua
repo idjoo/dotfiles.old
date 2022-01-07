@@ -27,11 +27,6 @@ vim.api.nvim_set_keymap("n", "<leader>bd", ":Bdelete<CR>", { silent = true, nore
 vim.api.nvim_set_keymap("n", "<C-o>", "<cmd>vsplit<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "<cmd>split<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>wincmd h<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-j>", "<cmd>wincmd j<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>wincmd k<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>wincmd l<CR>", { noremap = true })
-
 -- vim-fugitive
 vim.api.nvim_set_keymap("n", "<leader>gs", ":G<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>gh", ":diffget //3<CR>", {})

@@ -34,7 +34,7 @@ hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 hc keybind XF86AudioMute spawn amixer set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer sset Master 10%-
 hc keybind XF86AudioRaiseVolume spawn amixer sset Master 10%+
-hc keybind Print spawn flameshot full
+hc keybind Print spawn flameshot full -c
 hc keybind $Mod-Print spawn flameshot gui
 hc keybind XF86Launch1 spawn dmcalc
 
@@ -92,7 +92,7 @@ hc keybind $Mod-Control-m jumpto last-minimized
 hc keybind $Mod-Shift-f fullscreen toggle
 hc keybind $Mod-p pseudotile toggle
 
-hc keybind $Mod-d spawn dmenu_run 
+hc keybind $Mod-d spawn rofi -show drun
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.

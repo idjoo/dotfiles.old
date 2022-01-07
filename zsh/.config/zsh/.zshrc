@@ -29,14 +29,6 @@ function zsh_add_completion() {
 	if [ "$2" = true ] && compinit "${completion_file:1}"
 }
 
-# set VIMODE according to the current mode (default “[i]”)
-# VIMODE='[i]'
-# function zle-keymap-select {
-#     VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
-#     zle reset-prompt
-# }
-# zle -N zle-keymap-select
-
 # starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
@@ -70,9 +62,11 @@ zsh_add_plugin "zsh-users/zsh-completions"
 # alias
 alias x='htop'
 alias c='ncmpcpp'
-alias ls='exa --group-directories-first --color=always'
+alias ls='exa --group-directories-first --color=always --icons'
 alias ll='exa -l'
 alias la='exa -a'
+alias lal='exa -al'
+alias lla='exa -la'
 alias rm='rm -v'
 alias cp='cp -v'
 alias du='du -hs'
