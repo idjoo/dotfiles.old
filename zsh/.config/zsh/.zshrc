@@ -62,7 +62,7 @@ zsh_add_plugin "zsh-users/zsh-completions"
 # alias
 alias x='htop'
 alias c='ncmpcpp'
-alias ls='exa --group-directories-first --color=always --icons'
+alias ls='exa --group-directories-first --color=always --icons --git'
 alias ll='exa -l'
 alias la='exa -a'
 alias lal='exa -al'

@@ -4,7 +4,7 @@
 ![home-alt](home-alt.png)
 
 ## Details:
-+ **OS**: Gentoo
++ **OS**: [Gentoo](https://www.gentoo.org/)
 
 + **WM**: [herbstluftwm](https://herbstluftwm.org/)
 
