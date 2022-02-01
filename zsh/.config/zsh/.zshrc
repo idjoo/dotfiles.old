@@ -29,6 +29,12 @@ function zsh_add_completion() {
 	if [ "$2" = true ] && compinit "${completion_file:1}"
 }
 
+# plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "zsh-users/zsh-completions"
+zsh_add_plugin "kutsan/zsh-system-clipboard"
+
 # starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
@@ -46,6 +52,8 @@ _comp_options+=(globdots)
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
+typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
+typeset -g ZSH_SYSTEM_CLIPBOARD_SELECTION='PRIMARY'
 
 # use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -53,11 +61,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-
-# plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "zsh-users/zsh-completions"
 
 # alias
 alias x='htop'
@@ -72,3 +75,5 @@ alias cp='cp -v'
 alias du='du -hs'
 alias open='xdg-open'
 # alias tmux="tmux"
+
+neofetch

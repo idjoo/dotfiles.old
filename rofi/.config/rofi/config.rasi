@@ -1,7 +1,7 @@
 @theme "idjo"
 
 configuration {
-    modi: "drun,ssh";
+    modi: "drun,run,p:power-menu";
     font: "TerminessTTF Nerd Font 11";
     show-icons: true;
     sidebar-mode: true;

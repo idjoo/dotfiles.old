@@ -8,7 +8,7 @@
 
 + **WM**: [herbstluftwm](https://herbstluftwm.org/)
 
-+ **Terminal**: [kitty](https://sw.kovidgoyal.net/kitty/)
++ **Terminal**: [alacritty](https://alacritty.org/)
 
 + **Prompt**: [starship](https://starship.rs/)
 

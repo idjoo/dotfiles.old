@@ -34,9 +34,12 @@ hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
 hc keybind XF86AudioMute spawn amixer set Master toggle
 hc keybind XF86AudioLowerVolume spawn amixer sset Master 10%-
 hc keybind XF86AudioRaiseVolume spawn amixer sset Master 10%+
-hc keybind Print spawn flameshot full -c
-hc keybind $Mod-Print spawn flameshot gui
 hc keybind XF86Launch1 spawn dmcalc
+hc keybind Print spawn flameshot gui
+
+hc keybind $Mod-Print spawn screencast
+hc keybind $Alt-Print spawn screencast -s
+hc keybind $Mod-backslash spawn screencast-stop
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -196,7 +199,8 @@ feh --bg-fill ~/Pictures/.wallpaper/*.jpg
 
 # panel
 panel=$HOME/.config/herbstluftwm/panel.sh
-$panel &
+$panel
+
 # [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
 # for monitor in $(hc list_monitors | cut -d: -f1) ; do
 #     # start it on each monitor

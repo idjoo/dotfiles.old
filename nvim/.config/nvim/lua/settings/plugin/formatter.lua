@@ -3,26 +3,22 @@ require("formatter").setup ({
         cpp = {
             function()
                 return {
-                    exe = "uncrustify",
+                    exe = "clang-format",
                     args = {
-                        "-c", "$HOME/.config/uncrustify/config.cfg",
-                        "-f", vim.api.nvim_buf_get_name(0)
+                        vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
-                    cwd = vim.fn.expand("%:p:h")
                 }
             end
         },
         c = {
             function()
                 return {
-                    exe = "uncrustify",
+                    exe = "clang-format",
                     args = {
-                        "-c", "$HOME/.config/uncrustify/config.cfg",
-                        "-f", vim.api.nvim_buf_get_name(0)
+                        vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
-                    cwd = vim.fn.expand("%:p:h")
                 }
             end
         },
@@ -36,9 +32,77 @@ require("formatter").setup ({
                         vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
-                    cwd = vim.fn.expand("%:p:h")
                 }
             end
-        }
+        },
+        html = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
+        css = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
+        javascript = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
+        typescriptreact = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
+        json = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
+        rust = {
+            function()
+                return {
+                    exe = "rustfmt",
+                    args = {"--edition=2018", "--emit=stdout"},
+                    stdin = true
+                }
+            end
+        },
     }
 })
