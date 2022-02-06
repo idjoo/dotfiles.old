@@ -1,5 +1,3 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
 env:
   TERM: alacritty
 
@@ -38,7 +36,6 @@ colors:
     text: CellBackground
     cursor: CellForeground
 
-  # Normal colors
   normal:
     black:   '#60695f'
     red:     '#e29288'
@@ -48,28 +45,6 @@ colors:
     magenta: '#c08da4'
     cyan:    '#71ca98'
     white:   '#c6cac4'
-
-  # Bright colors
-  # bright:
-  #  black:   '#7a8178'
-  #  red:     '#e2a299'
-  #  green:   '#b0d08c'
-  #  yellow:  '#dcbf83'
-  #  blue:    '#92c1d3'
-  #  magenta: '#c69eaf'
-  #  cyan:    '#87cfa6'
-  #  white:   '#e0e2dd'
-
-  # Dim colors
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
