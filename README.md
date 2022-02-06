@@ -1,7 +1,7 @@
 # My dotfiles repository.
 
 ![home](img/home.png)
-![home-alt](img/home-alt.png)
+![home1](img/home1.png)
 
 ## Details:
 + **OS**: [Gentoo](https://www.gentoo.org/)
