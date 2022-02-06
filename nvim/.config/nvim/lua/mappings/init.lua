@@ -3,13 +3,13 @@
 -- vim.api.nvim_set_keymap('n', '<leader>e', ':Lexplore<CR>', { noremap = true, silent = true })
 
 -- Formatter
-vim.api.nvim_set_keymap('n', '<leader>bf', '<cmd>Format<CR>', { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bf", "<cmd>Format<CR>", { silent = true })
 
 -- Telescope
-vim.api.nvim_set_keymap('n','<leader>ff', ':Telescope find_files<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n','<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n','<leader>fb', ':Telescope buffers<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n','<leader>fh', ':Telescope help_tags<CR>', {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fg", ":Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<CR>", { noremap = true })
 
 -- Kommentary
 vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default", {})
@@ -31,3 +31,6 @@ vim.api.nvim_set_keymap("n", "<C-u>", "<cmd>split<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gs", ":G<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>gh", ":diffget //3<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>gf", ":diffget //2<CR>", {})
+
+-- glow
+vim.api.nvim_set_keymap("n", "<leader>mp", ":Glow<CR>", {})

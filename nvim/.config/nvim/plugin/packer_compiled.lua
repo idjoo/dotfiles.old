@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["idjo.nvim"] = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/idjo.nvim",
@@ -188,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/ct/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   vimwiki = {
     loaded = true,

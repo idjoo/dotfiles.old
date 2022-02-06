@@ -25,7 +25,6 @@ Alt=Mod1
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
-# hc keybind $Mod-Return spawn "${TERMINAL:-kitty}" 
 hc keybind $Mod-Return spawn "${TERMINAL:-alacritty}" 
 
 # xf86
@@ -189,17 +188,17 @@ hc substitute ALGO settings.default_frame_layout    \
 # unlock, just to be sure
 hc unlock
 
+# set wallpaper
+feh --bg-fill ~/Pictures/.wallpaper/*.jpg
+
+# set panel
+panel=$HOME/.config/herbstluftwm/panel.sh
+$panel
+
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 # hc detect_monitors
-
-# wallpaper
-feh --bg-fill ~/Pictures/.wallpaper/*.jpg
-
-# panel
-panel=$HOME/.config/herbstluftwm/panel.sh
-$panel
 
 # [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
 # for monitor in $(hc list_monitors | cut -d: -f1) ; do

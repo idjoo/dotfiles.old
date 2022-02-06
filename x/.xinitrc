@@ -29,6 +29,7 @@ xbacklight -set 50
 xset s off
 xset -dpms
 mpd &
+
 #xrdb .Xresources
 #xsetroot -cursor_name left_ptr &
 #nitrogen --restore &

@@ -104,5 +104,29 @@ require("formatter").setup ({
                 }
             end
         },
+        markdown = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--insert-pragma", "--prose-wrap=preserve",
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
+        --[[ lua = {
+            function()
+                return {
+                    exe = "stylua",
+                    args = {
+                        vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        }, ]]
     }
 })
