@@ -135,7 +135,7 @@ hc set frame_gap 0
 hc attr theme.padding_top 0  # space below the title's baseline (i.e. text depth)
 hc attr theme.active.color '#345F0C'
 hc attr theme.title_color '#000000'
-hc attr theme.normal.color '#323232'
+hc attr theme.normal.color '#4c594c'
 hc attr theme.urgent.color '#7811A1'
 hc attr theme.normal.title_color '#898989'
 hc attr theme.inner_width 0
@@ -193,7 +193,7 @@ feh --bg-fill ~/Pictures/.wallpaper/*.jpg
 
 # set panel
 panel=$HOME/.config/herbstluftwm/panel.sh
-$panel
+$panel &
 
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
