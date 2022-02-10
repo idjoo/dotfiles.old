@@ -1,7 +1,9 @@
 # My dotfiles repository.
 
-![home](img/home.png)
 ![home1](img/home1.png)
+![home2](img/home2.png)
+![home3](img/home3.png)
+![home4](img/home4.png)
 
 ## Details:
 + **OS**: [Gentoo](https://www.gentoo.org/)

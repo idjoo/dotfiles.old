@@ -1,3 +1,6 @@
+source $ZDOTDIR/.zshenv
+
+# functions
 function zsh_add_file() {
     [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
 }
@@ -27,6 +30,20 @@ function zsh_add_completion() {
     fi
 	completion_file="$(basename "${completion_file_path}")"
 	if [ "$2" = true ] && compinit "${completion_file:1}"
+}
+
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+}
+compctl -K _pip_completion pip
+
+function pretty_csv {
+    perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' "$@" | column -t -s
 }
 
 # plugins
@@ -73,6 +90,5 @@ alias rm='rm -v'
 alias cp='cp -v'
 alias du='du -hs'
 alias open='xdg-open'
-# alias tmux="tmux"
 
-neofetch
+# neofetch
