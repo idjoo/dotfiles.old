@@ -1,6 +1,9 @@
 -- COK SAMPAH
 -- vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>e', ':Lexplore<CR>', { noremap = true, silent = true })
+-- save file as root
+-- :w !sudo tee %
+vim.api.nvim_set_keymap("c", "w!!", "<cmd>w !doas tee % > /dev/null<CR>", { silent = true })
 
 -- Formatter
 vim.api.nvim_set_keymap("n", "<leader>bf", "<cmd>Format<CR>", { silent = true })

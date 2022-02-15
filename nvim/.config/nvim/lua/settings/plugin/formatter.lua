@@ -71,6 +71,18 @@ require("formatter").setup ({
                 }
             end
         },
+        php = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--condev-php/pearfig", "$HOME/.config/prettier/config.toml",
+                        vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = true,
+                }
+            end
+        },
         typescriptreact = {
             function()
                 return {
@@ -117,16 +129,5 @@ require("formatter").setup ({
                 }
             end
         },
-        --[[ lua = {
-            function()
-                return {
-                    exe = "stylua",
-                    args = {
-                        vim.api.nvim_buf_get_name(0)
-                    },
-                    stdin = true,
-                }
-            end
-        }, ]]
     }
 })
