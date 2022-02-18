@@ -28,6 +28,6 @@ xcape -e 'Mode_switch=Escape'
 xbacklight -set 50
 xset s off
 xset -dpms
-mpd &
+#mpd &
 
 exec herbstluftwm --locked

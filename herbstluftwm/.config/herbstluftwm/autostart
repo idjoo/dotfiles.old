@@ -189,7 +189,7 @@ hc substitute ALGO settings.default_frame_layout    \
 hc unlock
 
 # set wallpaper
-feh --bg-fill ~/Pictures/.wallpaper/*.jpg
+feh --bg-fill ~/Pictures/.wallpaper/*.png
 
 # set panel
 panel=$HOME/.config/herbstluftwm/panel.sh
