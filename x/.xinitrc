@@ -30,9 +30,4 @@ xset s off
 xset -dpms
 mpd &
 
-#xrdb .Xresources
-#xsetroot -cursor_name left_ptr &
-#nitrogen --restore &
-
-# exec dbus-launch --sh-syntax --exit-with-session qtile
 exec herbstluftwm --locked

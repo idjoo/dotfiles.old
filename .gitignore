@@ -5,3 +5,6 @@ zsh/.config/zsh/.zcompdump
 
 # nvim
 nvim/.config/nvim/{plugin,*.log}
+
+# tmux
+tmux/.config/tmux/plugins/
