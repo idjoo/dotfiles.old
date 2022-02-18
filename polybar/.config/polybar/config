@@ -154,7 +154,7 @@ ramp-foreground = #e29288
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>

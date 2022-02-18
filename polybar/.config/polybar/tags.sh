@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Multi monitor support. Needs MONITOR environment variable to be set for each instance of polybar
-# If MONITOR environment variable is not set this will default to monitor 0
-# Check https://github.com/polybar/polybar/issues/763
 MON_IDX="0"
 mapfile -t MONITOR_LIST < <(polybar --list-monitors | cut -d":" -f1)
 for (( i=0; i<$((${#MONITOR_LIST[@]})); i++ )); do
@@ -28,24 +25,24 @@ herbstclient --idle "tag_*" 2>/dev/null | {
 						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#354535} ${i:1} %{B-}%{A}"
 						echo "%{F#4C594C}  %{F-}"
                         ;;
-                    '+')
-                        # the tag is viewed on the specified MONITOR, but this monitor is not focused.
-                        ;;
                     '#')
                         # the tag is viewed on the specified MONITOR and it is focused.
 						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#738f54} ${i:1} %{B-}%{A}"
 						echo "%{F#738F54}  %{F-}"
+                        ;;
+                    '!')
+                        # urgent window
+						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#D16969} ${i:1} %{B-}%{A}"
+						echo "%{F#D16969}  %{F-}"
+                        ;;
+                    '+')
+                        # the tag is viewed on the specified MONITOR, but this monitor is not focused.
                         ;;
                     '-')
                         # the tag is viewed on a different MONITOR, but this monitor is not focused.
                         ;;
                     '%')
                         # the tag is viewed on a different MONITOR and it is focused.
-                        ;;
-                    '!')
-                        # urgent window
-						# echo "%{A1:herbstclient focus_monitor ${MON_IDX}; herbstclient use ${i:1}:}%{B#D16969} ${i:1} %{B-}%{A}"
-						echo "%{F#D16969}  %{F-}"
                         ;;
                 esac
 

@@ -49,7 +49,6 @@ function pretty_csv {
 # plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "zsh-users/zsh-history-substring-search"
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "kutsan/zsh-system-clipboard"
 
