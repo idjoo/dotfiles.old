@@ -1,6 +1,7 @@
 # zsh
 zsh/.config/zsh/plugins/
 zsh/.config/zsh/.zsh_history
+zsh/.config/zsh/.zcompdump
 
 # nvim
 nvim/.config/nvim/{plugin,*.log}
