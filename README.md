@@ -16,6 +16,6 @@
 
 + **Bar**: [polybar](https://polybar.github.io/)
 
-+ **Wallpaper**: [princess mononoke](https://get.wallhere.com/photo/pixel-art-text-logo-green-Princess-Mononoke-Studio-Ghibli-brand-Ashitaka-screenshot-computer-wallpaper-font-180233.png)
++ **Wallpaper**: [princess mononoke](https://mocah.org/uploads/posts/4577569-studio-ghibli-princess-mononoke-ashitaka-pixel-art.png)
 
 + **Others**: [cbonsai](https://gitlab.com/jallbrit/cbonsai), [neofetch](https://github.com/dylanaraps/neofetch)
