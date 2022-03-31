@@ -20,8 +20,11 @@ return require("packer").startup({
 		use("hrsh7th/cmp-nvim-lsp")
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/nvim-cmp")
-		use("saadparwaiz1/cmp_luasnip")
-		use("L3MON4D3/LuaSnip")
+        use("onsails/lspkind-nvim")
+        use({'tzachar/cmp-tabnine',
+            run='./install.sh',
+            requires = 'hrsh7th/nvim-cmp',
+        })
 
 		use("b3nj5m1n/kommentary")
 		use("mhartington/formatter.nvim")
@@ -47,7 +50,6 @@ return require("packer").startup({
 		use("github/copilot.vim")
 
 		-- Languages
-		use("fladson/vim-kitty")
 
 		-- Colorscheme
 		use("cocatrip/idjo.nvim")

@@ -45,7 +45,7 @@ compctl -K _pip_completion pip
 function pretty_csv {
     perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' "$@" | column -t -s
 }
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 # plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
@@ -86,7 +86,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # alias
-alias x='htop'
+alias x='btop'
 alias c='ncmpcpp'
 alias ls='exa --group-directories-first --color=always --icons --git'
 alias ll='exa -l'

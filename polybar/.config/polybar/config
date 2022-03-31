@@ -59,7 +59,7 @@ margin-bottom = 0
 
 [module/distro]
 type = custom/script
-exec = echo ""
+exec = echo ""
 
 [module/date]
 type = internal/date
@@ -154,7 +154,7 @@ ramp-foreground = #e29288
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>

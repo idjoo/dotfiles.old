@@ -29,5 +29,13 @@ xbacklight -set 50
 xset s off
 xset -dpms
 #mpd &
+eval "$(ssh-agent -s)"
+
+# # set wallpaper
+# feh --bg-fill ~/Pictures/.wallpaper/*.png
+
+# # set panel
+# panel=$HOME/.config/herbstluftwm/panel.sh
+# $panel &
 
 exec herbstluftwm --locked

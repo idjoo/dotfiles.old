@@ -26,9 +26,9 @@ wo.relativenumber = true
 wo.wrap = false
 
 -- buffer-local options
-bo.tabstop = 4
+bo.tabstop = 2
 -- bo.softtabstop = 4
-bo.shiftwidth = 4
+bo.shiftwidth = 2
 bo.expandtab = true
 bo.smartindent = true
 bo.swapfile = false

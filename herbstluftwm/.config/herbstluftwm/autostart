@@ -163,7 +163,12 @@ hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
-hc rule class=linelauncher.exe floating=on
+hc rule class=line.exe floating=on
+hc rule class=explorer.exe floating=on
+hc rule class=winecfg.exe floating=on
+hc rule class=taskmgr.exe floating=on
+hc rule class=control.exe floating=on
+hc rule class=Wfica tag=8
 hc rule class=Firefox tag=9
 hc rule class=zoom tag=8 floating=on
 hc rule class=TelegramDesktop tag=7
@@ -188,13 +193,6 @@ hc substitute ALGO settings.default_frame_layout    \
 # unlock, just to be sure
 hc unlock
 
-# set wallpaper
-feh --bg-fill ~/Pictures/.wallpaper/*.png
-
-# set panel
-panel=$HOME/.config/herbstluftwm/panel.sh
-$panel &
-
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
@@ -205,3 +203,7 @@ $panel &
 #     # start it on each monitor
 #     "$panel" "$monitor" &
 # done
+
+feh --bg-fill ~/Pictures/.wallpaper/*.png
+panel=$HOME/.config/herbstluftwm/panel.sh
+$panel &
