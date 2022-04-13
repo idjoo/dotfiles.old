@@ -27,8 +27,8 @@ vim.api.nvim_set_keymap("n", "]b", ":BufferLineCycleNext<CR>", { silent = true, 
 vim.api.nvim_set_keymap("n", "<leader>bd", ":Bdelete<CR>", { silent = true, noremap = true })
 
 -- Windows
-vim.api.nvim_set_keymap("n", "<C-o>", "<cmd>vsplit<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-u>", "<cmd>split<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-o>", "<cmd>vsplit<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-u>", "<cmd>split<CR>", { noremap = true })
 
 -- vim-fugitive
 vim.api.nvim_set_keymap("n", "<leader>gs", ":G<CR>", {})

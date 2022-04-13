@@ -1,6 +1,8 @@
 format='\[ $directory\]$character '
 right_format='\[ $all\]'
 add_newline = false
+scan_timeout = 50
+command_timeout = 500
 
 [line_break]
 disabled = true
@@ -17,3 +19,6 @@ symbol = "ﳑ "
 
 [python]
 symbol = " "
+
+[gcloud]
+format = '[$symbol($project)]($style) '

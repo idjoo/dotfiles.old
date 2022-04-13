@@ -28,7 +28,7 @@ xcape -e 'Mode_switch=Escape'
 xbacklight -set 50
 xset s off
 xset -dpms
-#mpd &
+pulseaudio --daemonize
 eval "$(ssh-agent -s)"
 
 # # set wallpaper
@@ -37,5 +37,7 @@ eval "$(ssh-agent -s)"
 # # set panel
 # panel=$HOME/.config/herbstluftwm/panel.sh
 # $panel &
+
+export $(dbus-launch)
 
 exec herbstluftwm --locked

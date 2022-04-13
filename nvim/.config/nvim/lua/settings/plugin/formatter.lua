@@ -1,5 +1,33 @@
 require("formatter").setup ({
     filetype = {
+        tex = {
+            function()
+                return {
+                    exe = "latexindent",
+                    args = {"-m"},
+                    stdin = true
+                }
+            end
+        },
+        go = {
+            function()
+                return {
+                    exe = "gofmt",
+                    stdin = true
+                }
+            end
+        },
+        yaml = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--config", "$HOME/.config/prettier/config.yaml",
+                    },
+                    stdin = true,
+                }
+            end
+        },
         cpp = {
             function()
                 return {
@@ -40,7 +68,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
@@ -52,7 +80,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
@@ -64,7 +92,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
@@ -76,7 +104,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--condev-php/pearfig", "$HOME/.config/prettier/config.toml",
+                        "--condev-php/pearfig", "$HOME/.config/prettier/config.yaml",
                         vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
@@ -88,7 +116,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
@@ -100,7 +128,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,
@@ -121,7 +149,7 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.toml",
+                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--insert-pragma", "--prose-wrap=preserve",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },

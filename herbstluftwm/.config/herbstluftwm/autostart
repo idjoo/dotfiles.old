@@ -163,21 +163,38 @@ hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
-hc rule class=line.exe floating=on
-hc rule class=explorer.exe floating=on
-hc rule class=winecfg.exe floating=on
-hc rule class=taskmgr.exe floating=on
-hc rule class=control.exe floating=on
-hc rule class=Wfica tag=8
-hc rule class=Firefox tag=9
-hc rule class=zoom tag=8 floating=on
-hc rule class=TelegramDesktop tag=7
-hc rule class=discord tag=6
 hc rule focus=on # normally focus new clients
 hc rule floatplacement=smart
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
+
+
+# telegram
+hc rule class=TelegramDesktop tag=7
+
+# citrix
+hc rule class=Wfica tag=8
+
+# wine n shit
+hc rule class=control.exe floating=on
+hc rule class=explorer.exe floating=on
+hc rule class=line.exe floating=on
+hc rule class=taskmgr.exe floating=on
+hc rule class=winecfg.exe floating=on
+
+# discord
+hc rule class=discord tag=6
+
+# firefox
+hc rule class='(firefox-default|Firefox)' tag=9
+
+# tlauncher
+hc rule class=org-tlauncher-tlauncher-rmo-TLauncher floating=on
+
+# zoom
+hc rule class=zoom tag=8 floating=on
+
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
