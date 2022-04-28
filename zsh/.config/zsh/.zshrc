@@ -56,7 +56,8 @@ zsh_add_plugin "kutsan/zsh-system-clipboard"
 HISTFILE=~/.config/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+setopt append_history
+setopt hist_ignore_dups
 
 # starship
 eval "$(starship init zsh)"
