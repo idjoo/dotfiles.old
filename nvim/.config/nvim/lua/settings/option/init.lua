@@ -14,7 +14,7 @@ o.showmode = false
 o.completeopt = "menuone,noselect"
 o.colorcolumn = '80'
 o.signcolumn = 'yes'
-o.cmdheight = 2
+o.cmdheight = 1
 o.updatetime = 50
 o.shortmess = 'actIoOsT'
 o.clipboard = 'unnamedplus'
@@ -27,7 +27,7 @@ wo.wrap = false
 
 -- buffer-local options
 bo.tabstop = 2
--- bo.softtabstop = 4
+bo.softtabstop = 2
 bo.shiftwidth = 2
 bo.expandtab = true
 bo.smartindent = true

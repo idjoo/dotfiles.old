@@ -15,28 +15,19 @@ if [ -d "$HOME/.local/bin" ] && (! echo $PATH | grep -q "$HOME/.local/bin"); the
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Statusbar loop
-#while true; do
-#   xsetroot -name "$( date +"%F %R" )"
-#   sleep 1m    # Update time every minute
-#done &
-
-# setxkbmap -option caps:swapescape
 xmodmap $HOME/.xmodmap
 xcape -e 'Mode_switch=Escape'
-
 xbacklight -set 50
 xset s off
 xset -dpms
-pulseaudio --daemonize
-eval "$(ssh-agent -s)"
+xset r rate 200 30
 
-# # set wallpaper
+if [ $(ps aux | grep ssh-agent | wc -l) -eq 1 ]; then
+  eval "$(ssh-agent -s)"
+fi
+
+# set wallpaper
 # feh --bg-fill ~/Pictures/.wallpaper/*.png
-
-# # set panel
-# panel=$HOME/.config/herbstluftwm/panel.sh
-# $panel &
 
 export $(dbus-launch)
 

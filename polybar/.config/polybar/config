@@ -48,7 +48,7 @@ font-2 = Font Awesome 5 Brands Regular:size=13:antialias=false;2
 
 modules-left = distro date xwindow
 modules-center = hlwm
-modules-right = xbacklight alsa cpu memory temperature wlan battery
+modules-right = xbacklight pipewire cpu memory temperature wlan battery
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -109,6 +109,21 @@ ramp-volume-1 = " "
 ramp-volume-2 = " "
 ramp-volume-foreground = #7eb9d0
 
+[module/pipewire]
+type = custom/script
+
+format-prefix = "  "
+format-prefix-foreground = #7eb9d0
+label = "%output%"
+; label-font = 2
+
+interval = 2.0
+exec = ~/.config/polybar/pipewire.sh
+click-right = exec pavucontrol &
+click-left = ~/.config/polybar/pipewire.sh mute &
+scroll-up = ~/.config/polybar/pipewire.sh up &
+scroll-down = ~/.config/polybar/pipewire.sh down &
+
 [module/cpu]
 type = internal/cpu
 interval = 0.5
@@ -154,7 +169,7 @@ ramp-foreground = #e29288
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
