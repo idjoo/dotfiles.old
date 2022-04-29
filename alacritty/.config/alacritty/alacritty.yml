@@ -6,18 +6,18 @@ scrolling:
 
 font:
   normal:
-    family: Dank Mono
+    family: DankMono Nerd Font Mono
     style: Regular
 
   bold:
-    family: Dank Mono
+    family: DankMono Nerd Font Mono
     style: Bold
 
   italic:
-    family: Dank Mono
+    family: DankMono Nerd Font Mono
     style: Italic
 
-  size: 9.0
+  size: 8.5
 
 colors:
   primary:

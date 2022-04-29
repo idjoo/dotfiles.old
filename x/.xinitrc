@@ -26,9 +26,6 @@ if [ $(ps aux | grep ssh-agent | wc -l) -eq 1 ]; then
   eval "$(ssh-agent -s)"
 fi
 
-# set wallpaper
-# feh --bg-fill ~/Pictures/.wallpaper/*.png
-
 export $(dbus-launch)
 
 exec herbstluftwm --locked
