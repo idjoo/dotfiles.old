@@ -50,6 +50,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-completions"
+zsh_add_plugin "zsh-users/zsh-history-substring-search"
 zsh_add_plugin "kutsan/zsh-system-clipboard"
 
 # history
@@ -57,7 +58,7 @@ HISTFILE=~/.config/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt append_history
-setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 
 # starship
 eval "$(starship init zsh)"
@@ -85,6 +86,10 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # alias
 alias z='lfrun'
