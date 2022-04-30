@@ -100,10 +100,17 @@ hc keybind $Alt-Tab                 use_previous
 hc keybind $Mod-r                   remove
 hc keybind $Mod-s                   floating toggle
 hc keybind $Mod-f                   set_attr clients.focus.floating toggle
-hc keybind $Mod-Shift-m             set_attr clients.focus.minimized true
-hc keybind $Mod-Control-m           jumpto last-minimized
 hc keybind $Mod-Shift-f             fullscreen toggle
 hc keybind $Mod-p                   pseudotile toggle
+hc keybind $Mod-Shift-m             set_attr clients.focus.minimized true
+hc keybind $Mod-Control-m                   \
+    substitute FOCUS "tags.focus.name"      \
+    foreach CLIENT clients.                 \
+    sprintf MINATT "%c.minimized" CLIENT    \
+    sprintf TAGATT "%c.tag" CLIENT and      \
+        , compare MINATT "=" "true"         \
+        , compare TAGATT "=" FOCUS          \
+        , set_attr MINATT false
 
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
@@ -186,10 +193,11 @@ hc rule class=TelegramDesktop tag=7
 hc rule class=selfservice tag=8
 hc rule class=Selfservice tag=8
 hc rule class=Wfica tag=8
+hc rule class=PrimaryAuthManager tag=8 floating=on floatplacement=center
 
 # wine n shit
 hc rule class=control.exe floating=on
-hc rule class=explorer.exe floating=on
+hc rule class=explorer.exe floating=on floatplacement=smart
 hc rule class=line.exe floating=on
 hc rule class=taskmgr.exe floating=on
 hc rule class=winecfg.exe floating=on
@@ -198,7 +206,7 @@ hc rule class=winecfg.exe floating=on
 hc rule class=discord tag=6
 
 # firefox
-hc rule class='(firefox-default|Firefox)' tag=9
+hc rule class=firefox tag=9
 
 # tlauncher
 hc rule class=org-tlauncher-tlauncher-rmo-TLauncher floating=on
