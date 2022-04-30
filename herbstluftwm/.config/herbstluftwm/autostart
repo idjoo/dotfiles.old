@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+#
+# ██╗  ██╗███████╗██████╗ ██████╗ ███████╗████████╗██╗     ██╗   ██╗███████╗████████╗██╗    ██╗███╗   ███╗
+# ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║     ██║   ██║██╔════╝╚══██╔══╝██║    ██║████╗ ████║
+# ███████║█████╗  ██████╔╝██████╔╝███████╗   ██║   ██║     ██║   ██║█████╗     ██║   ██║ █╗ ██║██╔████╔██║
+# ██╔══██║██╔══╝  ██╔══██╗██╔══██╗╚════██║   ██║   ██║     ██║   ██║██╔══╝     ██║   ██║███╗██║██║╚██╔╝██║
+# ██║  ██║███████╗██║  ██║██████╔╝███████║   ██║   ███████╗╚██████╔╝██║        ██║   ╚███╔███╔╝██║ ╚═╝ ██║
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝   ╚═╝   ╚══════╝ ╚═════╝ ╚═╝        ╚═╝    ╚══╝╚══╝ ╚═╝     ╚═╝
+#
+
 hc() {
     herbstclient "$@"
 }
@@ -31,10 +40,11 @@ hc keybind $Mod-Return              spawn "${TERMINAL:-alacritty}"
 hc keybind XF86MonBrightnessUp      spawn xbacklight -inc 10
 hc keybind XF86MonBrightnessDown    spawn xbacklight -dec 10
 hc keybind XF86AudioMute            spawn pamixer --toggle-mute
-hc keybind XF86AudioRaiseVolume     spawn pamixer --increase 10
-hc keybind XF86AudioLowerVolume     spawn pamixer --decrease 10
+hc keybind XF86AudioRaiseVolume     spawn amixer sset Master 10%+
+hc keybind XF86AudioLowerVolume     spawn amixer sset Master 10%-
 hc keybind XF86Launch1              spawn dmcalc
 hc keybind Print                    spawn flameshot gui
+hc keybind $Mod-d                   spawn rofi -show drun
 
 hc keybind $Mod-Print               spawn screencast
 hc keybind $Alt-Print               spawn screencast -s
@@ -95,7 +105,6 @@ hc keybind $Mod-Control-m           jumpto last-minimized
 hc keybind $Mod-Shift-f             fullscreen toggle
 hc keybind $Mod-p                   pseudotile toggle
 
-hc keybind $Mod-d                   spawn rofi -show drun
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
@@ -169,7 +178,6 @@ hc rule floatplacement=smart
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
-
 
 # telegram
 hc rule class=TelegramDesktop tag=7
