@@ -5,7 +5,6 @@ typeset -U PATH path
 
 path+=("$HOME/.local/bin")
 path+=("$HOME/.cargo/bin")
-path+=("/opt/ICAClient")
 path+=("$GOBIN")
 path+=("$path[@]")
 
