@@ -1,0 +1,75 @@
+
+# history
+HISTFILE=~/.config/zsh/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history
+setopt hist_ignore_all_dups
+
+# starship
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
+
+autoload -U colors && colors
+
+# basic auto/tab complete
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
+typeset -g ZSH_SYSTEM_CLIPBOARD_SELECTION='PRIMARY'
+
+# zsh substring search
+typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=green,bold'
+typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
+typeset -g HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
+typeset -g HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=''
+typeset -g HISTORY_SUBSTRING_SEARCH_FUZZY=''
+
+# zsh autosuggestions
+typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
+
+# use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# alias
+alias z='lfrun'
+alias x='btop'
+alias c='ncmpcpp'
+alias ls='exa --group-directories-first --color=always --icons --git'
+alias ll='exa -l'
+alias la='exa -a'
+alias {lla,lal}='exa -la'
+alias lf='lfrun'
+alias rm='rm -v'
+alias cp='cp -v'
+alias du='du -hs'
+alias open='xdg-open'
+
+# neofetch
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/cocatrip/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cocatrip/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/cocatrip/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cocatrip/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)
