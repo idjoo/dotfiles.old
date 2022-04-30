@@ -1,0 +1,13 @@
+# alias
+alias z='lfrun'
+alias x='btop'
+alias c='ncmpcpp'
+alias ls='exa --group-directories-first --color=always --icons --git'
+alias ll='exa -l'
+alias la='exa -a'
+alias {lla,lal}='exa -la'
+alias lf='lfrun'
+alias rm='rm -v'
+alias cp='cp -v'
+alias du='du -hs'
+alias open='xdg-open'
