@@ -1,5 +1,20 @@
+export EDITOR=nvim
+
 export GOPATH="$HOME/.go"
 export GOBIN="$GOPATH/bin"
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+
+export ANDROID_SDK_ROOT=/opt/android-sdk
 
 typeset -U PATH path
 

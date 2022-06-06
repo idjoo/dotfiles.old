@@ -68,7 +68,6 @@ require("formatter").setup ({
                 return {
                     exe = "prettier",
                     args = {
-                        "--config", "$HOME/.config/prettier/config.yaml",
                         "--stdin-filepath", vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true,

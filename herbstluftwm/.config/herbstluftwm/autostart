@@ -40,9 +40,14 @@ hc keybind $Mod-Return              spawn "${TERMINAL:-alacritty}"
 hc keybind XF86MonBrightnessUp      spawn xbacklight -inc 10
 hc keybind XF86MonBrightnessDown    spawn xbacklight -dec 10
 hc keybind XF86AudioMute            spawn pamixer --toggle-mute
-hc keybind XF86AudioRaiseVolume     spawn amixer sset Master 10%+
-hc keybind XF86AudioLowerVolume     spawn amixer sset Master 10%-
-hc keybind XF86Launch1              spawn dmcalc
+hc keybind XF86AudioRaiseVolume     spawn pamixer --increase 5
+hc keybind XF86AudioLowerVolume     spawn pamixer --decrease 5
+
+hc keybind XF86AudioPlay            spawn playerctl play-pause
+hc keybind XF86AudioNext            spawn playerctl next
+hc keybind XF86AudioPrev            spawn playerctl previous
+
+hc keybind XF86Launch1              spawn rofi -show calc -modi calc -no-show-match -no-sort
 hc keybind Print                    spawn flameshot gui
 hc keybind $Mod-d                   spawn rofi -show drun
 
@@ -189,6 +194,9 @@ hc rule floatplacement=smart
 # telegram
 hc rule class=TelegramDesktop tag=7
 
+# telegram
+hc rule class=f5vpn tag=8
+
 # citrix
 hc rule class=selfservice tag=8
 hc rule class=Selfservice tag=8
@@ -240,7 +248,7 @@ hc unlock
 #     "$panel" "$monitor" &
 # done
 
-feh --bg-fill ~/Pictures/.wallpaper/*.png
+feh --no-fehbg --bg-fill ~/Pictures/.wallpaper/*.png
 panel=$HOME/.config/herbstluftwm/panel.sh
 $panel &
 compositor=$HOME/.config/herbstluftwm/compositor.sh

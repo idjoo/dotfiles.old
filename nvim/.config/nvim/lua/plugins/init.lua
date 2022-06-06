@@ -26,12 +26,14 @@ return require("packer").startup({
             requires = 'hrsh7th/nvim-cmp',
         })
 
+		use("dcampos/nvim-snippy")
+		use("dcampos/cmp-snippy")
 		use("b3nj5m1n/kommentary")
 		use("mhartington/formatter.nvim")
 		use("nvim-treesitter/nvim-treesitter")
 		use("sheerun/vim-polyglot")
 		use("norcalli/nvim-colorizer.lua")
-		use("vimwiki/vimwiki")
+		use("nvim-orgmode/orgmode")
 		use({
 			"nvim-telescope/telescope.nvim",
 			requires = "nvim-lua/plenary.nvim",

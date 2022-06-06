@@ -19,6 +19,7 @@ o.updatetime = 50
 o.shortmess = 'actIoOsT'
 o.clipboard = 'unnamedplus'
 o.mouse = 'nicr'
+o.laststatus = 3
 
 -- window-local options
 wo.number = true
