@@ -15,21 +15,35 @@ return require("packer").startup({
 		use("wbthomason/packer.nvim")
 		use("windwp/nvim-autopairs")
 
+    -- lsp
 		use("neovim/nvim-lspconfig")
 		use("williamboman/nvim-lsp-installer")
-		use("hrsh7th/cmp-nvim-lsp")
-		use("hrsh7th/cmp-buffer")
+
+    -- completion
 		use("hrsh7th/nvim-cmp")
-		use("onsails/lspkind-nvim")
+		use("hrsh7th/cmp-nvim-lsp")
+		use("hrsh7th/cmp-nvim-lua")
+		use("hrsh7th/cmp-buffer")
+		use("hrsh7th/cmp-path")
+    use("saadparwaiz1/cmp_luasnip")
 		use({'tzachar/cmp-tabnine',
 			run='./install.sh',
 			requires = 'hrsh7th/nvim-cmp',
 		})
 
-		use("dcampos/nvim-snippy")
-		use("dcampos/cmp-snippy")
+		use("onsails/lspkind-nvim")
+
+    -- snippet
+		use("L3MON4D3/LuaSnip")
+    use("rafamadriz/friendly-snippets")
+
+    -- commenter
 		use("numToStr/Comment.nvim")
+
+    -- formatter
 		use("mhartington/formatter.nvim")
+
+    -- syntax highlight
 		use("nvim-treesitter/nvim-treesitter")
 		use("norcalli/nvim-colorizer.lua")
 		use("nvim-orgmode/orgmode")
@@ -48,12 +62,14 @@ return require("packer").startup({
 				"famiu/bufdelete.nvim",
 			},
 		})
+
+    -- ulti
 		use("github/copilot.vim")
 
-		-- Languages
+		-- languages
 		use("lervag/vimtex")
 
-		-- Colorscheme
+		-- colorscheme
 		use("cocatrip/idjo.nvim")
 
 		use("tpope/vim-fugitive")
