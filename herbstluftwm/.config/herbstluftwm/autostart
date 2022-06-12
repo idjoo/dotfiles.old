@@ -205,8 +205,8 @@ hc rule class=PrimaryAuthManager tag=8 floating=on floatplacement=center
 
 # wine n shit
 hc rule class=control.exe floating=on
-hc rule class=explorer.exe floating=on floatplacement=smart
-hc rule class=line.exe floating=on
+hc rule class=explorer.exe floating=on focus=
+# hc rule class=line.exe floating=on
 hc rule class=taskmgr.exe floating=on
 hc rule class=winecfg.exe floating=on
 

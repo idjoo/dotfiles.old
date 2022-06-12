@@ -20,18 +20,17 @@ return require("packer").startup({
 		use("hrsh7th/cmp-nvim-lsp")
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/nvim-cmp")
-        use("onsails/lspkind-nvim")
-        use({'tzachar/cmp-tabnine',
-            run='./install.sh',
-            requires = 'hrsh7th/nvim-cmp',
-        })
+		use("onsails/lspkind-nvim")
+		use({'tzachar/cmp-tabnine',
+			run='./install.sh',
+			requires = 'hrsh7th/nvim-cmp',
+		})
 
 		use("dcampos/nvim-snippy")
 		use("dcampos/cmp-snippy")
-		use("b3nj5m1n/kommentary")
+		use("numToStr/Comment.nvim")
 		use("mhartington/formatter.nvim")
 		use("nvim-treesitter/nvim-treesitter")
-		use("sheerun/vim-polyglot")
 		use("norcalli/nvim-colorizer.lua")
 		use("nvim-orgmode/orgmode")
 		use({

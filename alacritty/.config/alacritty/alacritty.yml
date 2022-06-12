@@ -47,3 +47,8 @@ selection:
   save_to_clipboard: true
 
 live_config_reload: true
+
+cursor:
+  style:
+    blinking: Always
+    blink_interval: 1000

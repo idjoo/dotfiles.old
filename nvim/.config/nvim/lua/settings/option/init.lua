@@ -1,35 +1,37 @@
-local o, bo, wo = vim.o, vim.bo, vim.wo
-
 vim.cmd([[
     filetype plugin on
 ]])
 
 -- global options
-o.hlsearch = false
-o.hidden = true
-o.writebackup = false
-o.incsearch = true
-o.scrolloff = 10
-o.showmode = false
-o.completeopt = "menuone,noselect"
-o.colorcolumn = '80'
-o.signcolumn = 'yes'
-o.cmdheight = 1
-o.updatetime = 50
-o.shortmess = 'actIoOsT'
-o.clipboard = 'unnamedplus'
-o.mouse = 'nicr'
-o.laststatus = 3
+vim.o.hlsearch = false
+vim.o.hidden = true
+vim.o.writebackup = false
+vim.o.incsearch = true
+vim.o.scrolloff = 10
+vim.o.showmode = false
+vim.o.completeopt = "menuone,noselect"
+vim.o.colorcolumn = '80'
+vim.o.signcolumn = 'yes'
+vim.o.cmdheight = 1
+vim.o.updatetime = 50
+vim.o.shortmess = 'actIoOsT'
+vim.o.clipboard = 'unnamedplus'
+vim.o.mouse = 'nicr'
+vim.o.laststatus = 3
 
 -- window-local options
-wo.number = true
-wo.relativenumber = true
-wo.wrap = false
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.wrap = false
 
 -- buffer-local options
-bo.tabstop = 2
-bo.softtabstop = 2
-bo.shiftwidth = 2
-bo.expandtab = true
-bo.smartindent = true
-bo.swapfile = false
+vim.bo.tabstop = 2
+vim.bo.softtabstop = 2
+vim.bo.shiftwidth = 2
+vim.bo.expandtab = true
+vim.bo.smartindent = true
+vim.bo.swapfile = false
+
+vim.opt.list = false
+vim.opt.listchars = {
+}
