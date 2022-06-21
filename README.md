@@ -6,7 +6,7 @@
 ![home4](img/home4.png)
 
 ## Details:
-+ **OS**: [Gentoo](https://www.gentoo.org/)
++ **OS**: [Arch](https://archlinux.org/)
 
 + **WM**: [herbstluftwm](https://herbstluftwm.org/)
 
