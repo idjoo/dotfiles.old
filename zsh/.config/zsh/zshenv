@@ -16,6 +16,9 @@ export WINEPREFIX="$XDG_DATA_HOME"/wine
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+
 typeset -U PATH path
 
 path+=("$HOME/.local/bin")

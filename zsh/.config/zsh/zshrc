@@ -13,11 +13,11 @@ export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
 autoload -U colors && colors
 
 # basic auto/tab complete
-autoload -Uz compinit
+autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zmodload zsh/complist
-compinit
 _comp_options+=(globdots)
 
 # vi mode
@@ -59,3 +59,5 @@ if [ -f '/home/cocatrip/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then .
 fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
+
+complete -C '/usr/bin/aws_completer' aws
