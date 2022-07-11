@@ -40,7 +40,7 @@ cmp.setup({
   },
 
   mapping = {
-    ["<Tab>"] = cmp.mapping(function(fallback)
+    ["<down>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -51,7 +51,7 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
+    ["<up>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -77,11 +77,11 @@ cmp.setup({
   },
 
   sources = {
+    { name = 'luasnip' },
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'cmp_tabnine' },
-    { name = 'luasnip' },
     { name = 'buffer', keyword_length = 5 },
   },
 
