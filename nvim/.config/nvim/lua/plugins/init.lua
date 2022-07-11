@@ -64,7 +64,7 @@ return require("packer").startup({
 		})
 
     -- ulti
-		use("github/copilot.vim")
+		-- use("github/copilot.vim")
 
 		-- languages
 		use("lervag/vimtex")
@@ -73,6 +73,7 @@ return require("packer").startup({
 		use("cocatrip/idjo.nvim")
 
 		use("tpope/vim-fugitive")
+		use("lambdalisue/suda.vim")
 		use("ellisonleao/glow.nvim")
 		use("tpope/vim-surround")
 	end,
