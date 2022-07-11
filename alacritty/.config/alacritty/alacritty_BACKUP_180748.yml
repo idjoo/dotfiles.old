@@ -9,6 +9,10 @@ shell:
   #   - master
 
 env:
+<<<<<<< HEAD
+  # TERM: alacritty
+=======
+>>>>>>> fedf049 (add alternative for alacritty shell)
   TERM: xterm-256color
 
 scrolling:

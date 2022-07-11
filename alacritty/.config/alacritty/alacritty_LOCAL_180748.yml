@@ -1,14 +1,5 @@
-shell:
-  # program: /usr/bin/zsh
-  # program: /usr/bin/tmux
-  # args:
-  #   - new-session
-  #   - -A
-  #   - -D
-  #   - -s
-  #   - master
-
 env:
+  # TERM: alacritty
   TERM: xterm-256color
 
 scrolling:
