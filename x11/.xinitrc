@@ -20,7 +20,7 @@ xcape -e 'Mode_switch=Escape'
 xbacklight -set 50
 xset s off
 xset -dpms
-xset r rate 200 30
+xset r rate 200 50
 
 if [ $(ps aux | grep ssh-agent | wc -l) -eq 1 ]; then
   eval "$(ssh-agent -s)"
