@@ -21,7 +21,7 @@ truncation_length = 1
 fish_style_pwd_dir_length = 2
 
 [aws]
-symbol = "  "
+symbol = " "
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
 [buf]
