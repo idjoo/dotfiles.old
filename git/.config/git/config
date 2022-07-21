@@ -3,5 +3,6 @@
 	name = cocatrip
 [core]
 	editor = nvim
+	pager = nvim +Man!
 [init]
 	defaultBranch = master
