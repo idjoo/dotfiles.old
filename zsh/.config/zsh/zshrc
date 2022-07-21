@@ -13,6 +13,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
 autoload -U colors && colors
 
 # basic auto/tab complete
+fpath=(/home/cocatrip/.local/share/zsh/site-functions $fpath)
 autoload -Uz compinit && compinit
 autoload bashcompinit && bashcompinit
 zstyle ':completion:*' menu select
@@ -49,15 +50,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # neofetch
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/cocatrip/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cocatrip/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/cocatrip/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cocatrip/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# >>>> Vagrant command completion (start)
+# Vagrant command completion
 fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 compinit
-# <<<<  Vagrant command completion (end)
 
 complete -C '/usr/bin/aws_completer' aws
