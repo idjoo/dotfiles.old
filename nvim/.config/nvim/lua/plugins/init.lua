@@ -40,9 +40,6 @@ return require("packer").startup({
     -- commenter
 		use("numToStr/Comment.nvim")
 
-    -- formatter
-		use("mhartington/formatter.nvim")
-
     -- syntax highlight
 		use("nvim-treesitter/nvim-treesitter")
 		use("norcalli/nvim-colorizer.lua")
@@ -73,9 +70,9 @@ return require("packer").startup({
 		use("cocatrip/idjo.nvim")
 
 		use("tpope/vim-fugitive")
-		use("lambdalisue/suda.vim")
 		use("ellisonleao/glow.nvim")
 		use("tpope/vim-surround")
+		use("tpope/vim-rsi")
 	end,
 	config = {
 		display = {
