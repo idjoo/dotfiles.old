@@ -12,17 +12,17 @@ end
 lspkind.init()
 
 cmp.setup({
-  sorting = {
-    comparators = {
-      cmp.config.compare.offset,
-      cmp.config.compare.exact,
-      cmp.config.compare.score,
-      cmp.config.compare.kind,
-      cmp.config.compare.sort_text,
-      cmp.config.compare.length,
-      cmp.config.compare.order,
-    },
-  },
+  -- sorting = {
+  --   comparators = {
+  --     cmp.config.compare.offset,
+  --     cmp.config.compare.exact,
+  --     cmp.config.compare.score,
+  --     cmp.config.compare.kind,
+  --     cmp.config.compare.sort_text,
+  --     cmp.config.compare.length,
+  --     cmp.config.compare.order,
+  --   },
+  -- },
 
   formatting = {
     format = lspkind.cmp_format {
