@@ -62,3 +62,6 @@ cursor:
   style:
     blinking: Always
     blink_interval: 1000
+
+key_bindings:
+  - { key: N,   mods: Alt, action: SpawnNewInstance }
