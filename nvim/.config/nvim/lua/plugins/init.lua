@@ -73,7 +73,9 @@ return require("packer").startup({
 		use("ellisonleao/glow.nvim")
 		use("tpope/vim-surround")
 		use("tpope/vim-rsi")
+    use("kdheepak/lazygit.nvim")
 	end,
+
 	config = {
 		display = {
 			open_fn = require("packer.util").float,
