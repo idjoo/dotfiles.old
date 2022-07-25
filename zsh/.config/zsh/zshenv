@@ -22,11 +22,10 @@ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
 export MANPAGER="nvim +Man!"
 export PAGER="nvim +Man!"
 
-typeset -U PATH path
-
+# path
+typeset -U path PATH
 path+=("$HOME/.local/bin")
 path+=("$HOME/.cargo/bin")
 path+=("$GOBIN")
 path+=("$path[@]")
-
 export PATH
