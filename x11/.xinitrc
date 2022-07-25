@@ -11,8 +11,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
  unset f
 fi
 
-if [ -d "$HOME/.local/bin" ] && (! echo $PATH | grep -q "$HOME/.local/bin"); then
-    export PATH="$HOME/.local/bin:$PATH"
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+  eval "$(ssh-agent -s)"
 fi
 
 xmodmap $HOME/.xmodmap
@@ -21,10 +21,6 @@ xbacklight -set 50
 xset s off
 xset -dpms
 xset r rate 200 50
-
-if [ $(ps aux | grep ssh-agent | wc -l) -eq 1 ]; then
-  eval "$(ssh-agent -s)"
-fi
 
 export $(dbus-launch)
 
