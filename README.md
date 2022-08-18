@@ -1,4 +1,4 @@
-# My dotfiles repository.
+# My dotfiles repository
 
 ![home1](img/home1.png)
 ![home2](img/home2.png)
