@@ -1,6 +1,6 @@
 [user]
 	email = cocatrip@yahoo.com
-	name = cocatrip
+	name = vian
 [core]
 	editor = nvim
 	pager = nvim +Man!

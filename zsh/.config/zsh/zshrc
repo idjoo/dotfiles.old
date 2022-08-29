@@ -21,12 +21,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zmodload zsh/complist
 _comp_options+=(globdots)
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
-typeset -g ZSH_SYSTEM_CLIPBOARD_SELECTION='PRIMARY'
-
 # zsh substring search
 typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=green,bold'
 typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
@@ -36,6 +30,16 @@ typeset -g HISTORY_SUBSTRING_SEARCH_FUZZY=''
 
 # zsh autosuggestions
 typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
+
+# zsh syntax highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern regexp cursor root line)
+
+# vi mode plugin
+ZVM_CURSOR_STYLE_ENABLED=false
+# bindkey -v
+export KEYTIMEOUT=1
+# typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
+# typeset -g ZSH_SYSTEM_CLIPBOARD_SELECTION='PRIMARY'
 
 # use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -55,3 +59,5 @@ fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 compinit
 
 complete -C '/usr/bin/aws_completer' aws
+
+neofetch

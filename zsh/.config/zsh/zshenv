@@ -19,13 +19,19 @@ export ANDROID_SDK_ROOT=/opt/android-sdk
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
 
+export SYSTEMD_COLORS=true
+export SYSTEMD_PAGER="nvim +Man!"
+
 export MANPAGER="nvim +Man!"
 export PAGER="nvim +Man!"
+
+export BROWSER="firefox"
 
 # path
 typeset -U path PATH
 path+=("$HOME/.local/bin")
 path+=("$HOME/.cargo/bin")
+path+=("$HOME/.krew/bin")
 path+=("$GOBIN")
 path+=("$path[@]")
 export PATH

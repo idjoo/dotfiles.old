@@ -151,7 +151,7 @@ hc set frame_bg_transparent on
 hc set frame_transparent_width 5
 hc set frame_gap 0
 
-# hc attr theme.title_height 0
+hc attr theme.title_height 0
 # hc attr theme.title_font 'Dejavu Sans:pixelsize=12'  # example using Xft
 # # hc attr theme.title_font '-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 hc attr theme.padding_top 0  # space below the title's baseline (i.e. text depth)
@@ -194,7 +194,7 @@ hc rule floatplacement=smart
 # telegram
 hc rule class=TelegramDesktop tag=7
 
-# telegram
+# f5
 hc rule class=f5vpn tag=8
 
 # citrix
@@ -205,7 +205,7 @@ hc rule class=PrimaryAuthManager tag=8 floating=on floatplacement=center
 
 # wine n shit
 hc rule class=control.exe floating=on
-hc rule class=explorer.exe floating=on focus=
+hc rule class=explorer.exe floating=on
 # hc rule class=line.exe floating=on
 hc rule class=taskmgr.exe floating=on
 hc rule class=winecfg.exe floating=on
@@ -215,12 +215,18 @@ hc rule class=discord tag=6
 
 # firefox
 hc rule class=firefox tag=9
+hc rule class=firefox instance=Places floating=on
+hc rule class=firefox title~'^Mozilla Firefox.*' \
+  floating=on floatplacement=center
 
 # tlauncher
 hc rule class=org-tlauncher-tlauncher-rmo-TLauncher floating=on
 
 # zoom
-hc rule class=zoom tag=8 floating=on
+hc rule class=zoom tag=8 pseudotile=on
+
+# floating for fixed size
+hc rule fixedsize floating=on
 
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on

@@ -59,7 +59,7 @@ margin-bottom = 0
 
 [module/distro]
 type = custom/script
-exec = echo ""
+exec = echo ""
 
 [module/date]
 type = internal/date
