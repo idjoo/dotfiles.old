@@ -194,6 +194,9 @@ hc rule floatplacement=smart
 # telegram
 hc rule class=TelegramDesktop tag=7
 
+# whatsapp
+hc rule class~'^whatsapp-nativefier.*' tag=7
+
 # f5
 hc rule class=f5vpn tag=8
 
@@ -218,6 +221,9 @@ hc rule class=firefox tag=9
 hc rule class=firefox instance=Places floating=on
 hc rule class=firefox title~'^Mozilla Firefox.*' \
   floating=on floatplacement=center
+
+# chrome
+hc rule class=Google-chrome tag=9
 
 # tlauncher
 hc rule class=org-tlauncher-tlauncher-rmo-TLauncher floating=on
