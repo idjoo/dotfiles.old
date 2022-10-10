@@ -59,5 +59,3 @@ fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 compinit
 
 complete -C '/usr/bin/aws_completer' aws
-
-neofetch
