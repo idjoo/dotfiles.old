@@ -14,3 +14,6 @@ script/.local/bin/*
 !script/.local/bin/power-menu
 !script/.local/bin/kill-wine
 !script/.local/bin/dotfiles
+
+# lazygit
+lazygit/.config/lazygit/state.yml
