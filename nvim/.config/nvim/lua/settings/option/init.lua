@@ -33,6 +33,7 @@ vim.bo.shiftwidth = 2
 vim.bo.expandtab = true
 vim.bo.smartindent = true
 vim.bo.swapfile = false
+vim.bo.textwidth = 80
 
 -- vim.opt.list = false
 -- vim.opt.listchars = {
