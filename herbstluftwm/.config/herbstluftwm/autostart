@@ -49,6 +49,7 @@ hc keybind XF86AudioPrev            spawn playerctl previous
 
 hc keybind XF86Launch1              spawn rofi -show calc -modi calc -no-show-match -no-sort
 hc keybind Print                    spawn flameshot gui
+hc keybind Control-Print            spawn 
 hc keybind $Mod-d                   spawn rofi -show drun
 
 hc keybind $Mod-Print               spawn screencast
@@ -219,7 +220,7 @@ hc rule class=discord tag=6
 # firefox
 hc rule class=firefox tag=9
 hc rule class=firefox instance=Places floating=on
-hc rule class=firefox title~'^Mozilla Firefox.*' \
+hc rule class=firefox title~'^Mozilla Firefox .*' \
   floating=on floatplacement=center
 
 # chrome
