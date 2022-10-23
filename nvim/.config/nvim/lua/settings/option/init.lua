@@ -20,6 +20,11 @@ vim.o.mouse = 'nicr'
 vim.o.laststatus = 3
 vim.o.ignorecase = true
 vim.o.wildmenu = true
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.smartindent = true
 
 -- window-local options
 vim.wo.number = true
@@ -27,11 +32,6 @@ vim.wo.relativenumber = true
 vim.wo.wrap = false
 
 -- buffer-local options
-vim.bo.tabstop = 2
-vim.bo.softtabstop = 2
-vim.bo.shiftwidth = 2
-vim.bo.expandtab = true
-vim.bo.smartindent = true
 vim.bo.swapfile = false
 vim.bo.textwidth = 80
 
