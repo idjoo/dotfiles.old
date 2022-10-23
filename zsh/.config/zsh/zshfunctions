@@ -51,8 +51,17 @@ function lg() {
 
     lazygit "$@"
 
-    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
-            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
-            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
-    fi
+    # if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+    #         cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+    #         rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    # fi
+}
+
+function mount_cifs {
+  dir=$1
+  subdir=$2
+
+  doas mount -t cifs \
+    -o credentials=/etc/win-credentials,uid=$USER \
+    "//${dir}/${subdir}" "/mnt/${dir}/${subdir}"
 }
