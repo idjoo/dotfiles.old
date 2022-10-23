@@ -4,13 +4,14 @@ local lsp_installer = require("nvim-lsp-installer")
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -29,64 +30,64 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  buf_set_keymap('n', '<leader>bf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>bf', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts)
 end
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
-    local opts = {
-        on_attach = on_attach,
-    }
+  local opts = {
+    on_attach = on_attach,
+  }
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+  -- (optional) Customize the options passed to the server
+  -- if server.name == "tsserver" then
+  --     opts.root_dir = function() ... end
+  -- end
 
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
+  -- This setup() function is exactly the same as lspconfig's setup function.
+  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  server:setup(opts)
 end)
 
 local DEFAULT_SETTINGS = {
-    ui = {
-        icons = {
-            -- The list icon to use for installed servers.
-            server_installed = "◍",
-            -- The list icon to use for servers that are pending installation.
-            server_pending = "◍",
-            -- The list icon to use for servers that are not installed.
-            server_uninstalled = "◍",
-        },
-        keymaps = {
-            -- Keymap to expand a server in the UI
-            toggle_server_expand = "<CR>",
-            -- Keymap to install a server
-            install_server = "i",
-            -- Keymap to reinstall/update a server
-            update_server = "u",
-            -- Keymap to uninstall a server
-            uninstall_server = "X",
-        },
+  ui = {
+    icons = {
+      -- The list icon to use for installed servers.
+      server_installed = "◍",
+      -- The list icon to use for servers that are pending installation.
+      server_pending = "◍",
+      -- The list icon to use for servers that are not installed.
+      server_uninstalled = "◍",
     },
-
-    -- The directory in which to install all servers.
-    -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
-
-    pip = {
-        -- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
-        -- and is not recommended.
-        --
-        -- Example: { "--proxy", "https://proxyserver" }
-        install_args = {},
+    keymaps = {
+      -- Keymap to expand a server in the UI
+      toggle_server_expand = "<CR>",
+      -- Keymap to install a server
+      install_server = "i",
+      -- Keymap to reinstall/update a server
+      update_server = "u",
+      -- Keymap to uninstall a server
+      uninstall_server = "X",
     },
+  },
 
-    -- Controls to which degree logs are written to the log file. It's useful to set this to vim.log.levels.DEBUG when
-    -- debugging issues with server installations.
-    log_level = vim.log.levels.INFO,
+  -- The directory in which to install all servers.
+  -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
 
-    -- Limit for the maximum amount of servers to be installed at the same time. Once this limit is reached, any further
-    -- servers that are requested to be installed will be put in a queue.
-    max_concurrent_installers = 4,
+  pip = {
+    -- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
+    -- and is not recommended.
+    --
+    -- Example: { "--proxy", "https://proxyserver" }
+    install_args = {},
+  },
+
+  -- Controls to which degree logs are written to the log file. It's useful to set this to vim.log.levels.DEBUG when
+  -- debugging issues with server installations.
+  log_level = vim.log.levels.INFO,
+
+  -- Limit for the maximum amount of servers to be installed at the same time. Once this limit is reached, any further
+  -- servers that are requested to be installed will be put in a queue.
+  max_concurrent_installers = 4,
 }
