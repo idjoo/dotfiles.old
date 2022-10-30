@@ -41,6 +41,8 @@ return require("packer").startup({
 
     -- snippet
     use("L3MON4D3/LuaSnip")
+    use("rafamadriz/friendly-snippets")
+    use("saadparwaiz1/cmp_luasnip")
 
     -- completion
     use("hrsh7th/nvim-cmp")
