@@ -3,9 +3,11 @@ vim.cmd([[
 ]])
 
 -- global options
+vim.o.title = true
 vim.o.hlsearch = false
 vim.o.hidden = true
 vim.o.writebackup = false
+vim.o.backup = false
 vim.o.incsearch = true
 vim.o.scrolloff = 10
 vim.o.showmode = false
@@ -25,6 +27,7 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
+vim.o.autoindent = true
 
 -- window-local options
 vim.wo.number = true
@@ -33,8 +36,3 @@ vim.wo.wrap = false
 
 -- buffer-local options
 vim.bo.swapfile = false
-vim.bo.textwidth = 80
-
--- vim.opt.list = false
--- vim.opt.listchars = {
--- }
