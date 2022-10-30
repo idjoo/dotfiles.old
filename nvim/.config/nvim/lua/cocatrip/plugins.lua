@@ -17,7 +17,6 @@ return require("packer").startup({
     use("windwp/nvim-autopairs") -- autopairs
     use("nvim-lualine/lualine.nvim") -- statusline
     use("norcalli/nvim-colorizer.lua") -- colorizer
-    use("nvim-orgmode/orgmode") -- orgmode
 
     -- bufferline
     use({
