@@ -1,19 +1,19 @@
 @theme "idjo"
 
 configuration {
-    modi: "drun,run,p:power-menu";
-    font: "TerminessTTF Nerd Font 11";
-    show-icons: true;
-    sidebar-mode: true;
-    click-to-exit: false;
+  modi: "drun,run,p:power-menu";
+  font: "TerminessTTF Nerd Font 11";
+  show-icons: true;
+  sidebar-mode: true;
+  click-to-exit: false;
 
   timeout {
-      action: "kb-cancel";
-      delay:  0;
+    action: "kb-cancel";
+    delay:  0;
   }
 
   filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
+    directories-first: true;
+    sorting-method:    "name";
   }
 }
