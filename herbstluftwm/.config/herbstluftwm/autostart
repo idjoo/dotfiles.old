@@ -47,7 +47,7 @@ hc keybind XF86AudioPlay            spawn playerctl play-pause
 hc keybind XF86AudioNext            spawn playerctl next
 hc keybind XF86AudioPrev            spawn playerctl previous
 
-hc keybind XF86Launch1              spawn rofi -show calc -modi calc -no-show-match -no-sort
+hc keybind XF86Launch1              spawn rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xsel --clipboard"
 hc keybind Print                    spawn flameshot gui
 hc keybind Control-Print            spawn color-picker
 hc keybind $Mod-d                   spawn rofi -show drun
@@ -121,10 +121,10 @@ hc keybind $Mod-Control-m                   \
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
-hc keybind $Mod-space                                               \
-            or , and . compare tags.focus.curframe_wcount = 2       \
-                     . cycle_layout +1 grid max horizontal vertical \
-               , cycle_layout +1
+hc keybind $Mod-space                                \
+  or , and . compare tags.focus.curframe_wcount = 2  \
+           . cycle_layout +1 grid max                \
+     , cycle_layout +1
 
 # mouse
 hc mouseunbind --all
