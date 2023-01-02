@@ -1,3 +1,4 @@
+---
 shell:
   # program: /usr/bin/zsh
   # program: /usr/bin/tmux
@@ -31,8 +32,8 @@ font:
 
 colors:
   primary:
-    background: '#293329'
-    foreground: '#c5cac5'
+    background: "#293329"
+    foreground: "#c5cac5"
 
   cursor:
     text: CellBackground
@@ -43,14 +44,14 @@ colors:
     cursor: CellForeground
 
   normal:
-    black:   '#60695f'
-    red:     '#e29288'
-    green:   '#a4cc78'
-    yellow:  '#dbb66d'
-    blue:    '#7eb9d0'
-    magenta: '#c08da4'
-    cyan:    '#71ca98'
-    white:   '#c6cac4'
+    black: "#60695f"
+    red: "#e29288"
+    green: "#a4cc78"
+    yellow: "#dbb66d"
+    blue: "#7eb9d0"
+    magenta: "#c08da4"
+    cyan: "#71ca98"
+    white: "#c6cac4"
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -64,4 +65,5 @@ cursor:
     blink_interval: 1000
 
 key_bindings:
-  - { key: N,   mods: Alt, action: SpawnNewInstance }
+  - { key: N, mods: Alt, action: SpawnNewInstance }
+  - { key: Space, mods: Alt, mode: ~Search, action: ToggleViMode }
