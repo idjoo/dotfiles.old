@@ -1,8 +1,15 @@
 [user]
 	email = cocatrip@proton.me
 	name = Vian
+	signingkey = cocatrip@proton.me
 [core]
 	editor = nvim
 	pager = nvim +Man!
 [init]
 	defaultBranch = master
+[pull]
+	rebase = false
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
