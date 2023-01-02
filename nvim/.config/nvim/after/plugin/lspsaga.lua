@@ -2,7 +2,7 @@ local saga = require('lspsaga')
 
 saga.init_lsp_saga({
   code_action_lightbulb = {
-      virtual_text = false,
+    virtual_text = false,
   },
 })
 
@@ -13,7 +13,7 @@ saga.init_lsp_saga({
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-vim.keymap.set({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- Rename
 vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
@@ -43,7 +43,7 @@ vim.keymap.set("n", "]E", function()
 end, { silent = true })
 
 -- Outline
-vim.keymap.set("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+vim.keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 -- Hover Doc
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
