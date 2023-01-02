@@ -29,6 +29,14 @@ export PAGER="nvim +Man!"
 
 export BROWSER="firefox"
 
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTERLAB_DIR="$XDG_DATA_HOME"/jupyter/lab
+
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME"/ansible/ansible.cfg
+export ANSIBLE_HOME="$XDG_CONFIG_HOME"/ansible
+
+export GPG_TTY=$(tty)
+
 # path
 typeset -U path PATH
 path+=("$HOME/.local/bin")
