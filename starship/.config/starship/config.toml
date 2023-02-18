@@ -23,6 +23,7 @@ fish_style_pwd_dir_length = 2
 [aws]
 symbol = " "
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+disabled = true
 
 [buf]
 symbol = " "
@@ -71,6 +72,7 @@ format = '\[[$symbol($version)]($style)\]'
 [gcloud]
 format = '[$symbol($project)]($style) '
 # format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+disabled = true
 
 [git_branch]
 symbol = " "
