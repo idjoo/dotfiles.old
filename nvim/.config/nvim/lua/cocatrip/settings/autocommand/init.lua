@@ -11,3 +11,13 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   pattern = '*.rasi',
   command = 'set filetype=rasi'
 })
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = 'Dockerfile*',
+  command = 'set filetype=dockerfile'
+})
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = 'Jenkinsfile*',
+  command = 'set filetype=groovy'
+})

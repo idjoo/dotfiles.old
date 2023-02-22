@@ -7,6 +7,9 @@ null_ls.setup({
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.yamllint,
     null_ls.builtins.diagnostics.hadolint,
+    null_ls.builtins.diagnostics.sqlfluff.with({
+      extra_args = { "--dialect", "postgres" },
+    }),
     -- null_ls.builtins.diagnostics.pylint,
 
     -- formatting
@@ -22,6 +25,9 @@ null_ls.setup({
     null_ls.builtins.formatting.nginx_beautifier,
     -- null_ls.builtins.formatting.autopep8,
     null_ls.builtins.formatting.yapf,
+    null_ls.builtins.formatting.sqlfluff.with({
+      extra_args = { "--dialect", "postgres" },
+    }),
 
     -- code actions
     null_ls.builtins.code_actions.refactoring,

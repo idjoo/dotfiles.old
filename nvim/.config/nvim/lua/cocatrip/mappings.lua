@@ -21,3 +21,6 @@ vim.keymap.set("n", "<leader>gf", "<cmd>diffget //2<cr>")
 
 -- glow
 vim.keymap.set("n", "<leader>mp", "<cmd>Glow<cr>")
+
+-- lazygit
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")

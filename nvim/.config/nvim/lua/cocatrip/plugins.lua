@@ -79,6 +79,7 @@ return require("packer").startup({
     use("tpope/vim-fugitive") -- git helper
     use("folke/lsp-colors.nvim") -- highlight for lsp color
     use("ThePrimeagen/refactoring.nvim")
+    use("lukas-reineke/indent-blankline.nvim")
   end,
 
   config = {

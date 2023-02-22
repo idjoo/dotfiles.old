@@ -37,6 +37,8 @@ export ANSIBLE_HOME="$XDG_CONFIG_HOME"/ansible
 
 export GPG_TTY=$(tty)
 
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+
 # path
 typeset -U path PATH
 path+=("$HOME/.local/bin")
