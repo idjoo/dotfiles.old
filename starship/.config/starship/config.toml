@@ -1,5 +1,4 @@
-format='\[$directory\]$character '
-right_format='$all'
+format='\[$directory\]$all$character '
 add_newline = false
 scan_timeout = 50
 command_timeout = 500
@@ -18,7 +17,7 @@ format = '[$path]($style)[$read_only]($read_only_style)'
 repo_root_format = '[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)'
 read_only = " "
 truncation_length = 1
-fish_style_pwd_dir_length = 2
+fish_style_pwd_dir_length = 3
 
 [aws]
 symbol = " "
