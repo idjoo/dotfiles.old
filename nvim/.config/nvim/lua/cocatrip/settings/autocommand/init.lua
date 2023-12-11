@@ -3,6 +3,11 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 ]])
 
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = '*.prc',
+  command = 'set filetype=sqloracle'
+})
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   pattern = '*.mdx',
   command = 'set filetype=markdown'
 })

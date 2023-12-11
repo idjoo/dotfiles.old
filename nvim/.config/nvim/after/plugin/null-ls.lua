@@ -23,7 +23,6 @@ null_ls.setup({
     null_ls.builtins.formatting.clang_format,
     null_ls.builtins.formatting.xmlformat,
     null_ls.builtins.formatting.nginx_beautifier,
-    -- null_ls.builtins.formatting.autopep8,
     null_ls.builtins.formatting.yapf,
     null_ls.builtins.formatting.sqlfluff.with({
       extra_args = { "--dialect", "postgres" },

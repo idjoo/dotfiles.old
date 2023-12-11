@@ -1,13 +1,10 @@
 local mason = require("mason")
 local lspconfig = require("mason-lspconfig")
 
-require("mason").setup()
-require("mason-lspconfig").setup()
-
 mason.setup()
-lspconfig.setup({
+lspconfig.setup {
   automatic_installation = true
-})
+}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -26,9 +23,21 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("mason-lspconfig").setup_handlers {
   function(server_name)
-    require("lspconfig")[server_name].setup({
+    require("lspconfig")[server_name].setup {
       on_attach = on_attach,
       capabilities = capabilities
-    })
+    }
   end,
+}
+
+require('lspconfig').yamlls.setup {
+  settings = {
+    yaml = {
+      keyOrdering = false,
+      validate = false,
+      format = {
+        enable = true
+      }
+    }
+  }
 }
