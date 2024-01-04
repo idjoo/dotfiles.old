@@ -1,7 +1,7 @@
 [user]
-	email = cocatrip@proton.me
-	name = Vian
-	signingkey = cocatrip@proton.me
+	email = admin@idjo.cc
+	name = Adrianus Vian
+	signingkey = admin@idjo.cc
 [core]
 	editor = nvim
 	pager = nvim +Man!
@@ -12,4 +12,4 @@
 [gpg]
 	program = gpg
 [commit]
-	gpgsign = true
+	gpgsign = false

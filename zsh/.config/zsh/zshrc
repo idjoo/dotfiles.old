@@ -1,61 +1,53 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # history
-HISTFILE=~/.config/zsh/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTFILE=~/.config/zsh/zsh_history
+HISTSIZE=999999999
+SAVEHIST=999999999
 setopt append_history
 setopt inc_append_history
 setopt hist_ignore_all_dups
 
-# starship
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
-
-autoload -U colors && colors
-
-# basic auto/tab complete
-fpath=(/home/cocatrip/.local/share/zsh/site-functions $fpath)
-autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
+# completion
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}"/zsh
+
+zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
+zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
+
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+zstyle ':completion:*' squeeze-slashes true
+
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
 zmodload zsh/complist
-_comp_options+=(globdots)
 
-# zsh substring search
-typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=green,bold'
-typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
-typeset -g HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
-typeset -g HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=''
-typeset -g HISTORY_SUBSTRING_SEARCH_FUZZY=''
-
-# zsh autosuggestions
-typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
-
-# zsh syntax highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern regexp cursor root line)
-
-# vi mode plugin
-ZVM_CURSOR_STYLE_ENABLED=false
-# bindkey -v
-export KEYTIMEOUT=1
-# typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
-# typeset -g ZSH_SYSTEM_CLIPBOARD_SELECTION='PRIMARY'
-
-# use vim keys in tab complete menu:
+# key binding
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 
-# neofetch
+[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
 
-# Vagrant command completion
-fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
-compinit
+mkdir -p "$XDG_RUNTIME_DIR"/keychain
+eval $(keychain --eval --quiet --agents ssh id_ed25519 id_ed25519_jenkins_dev)
 
-complete -C '/usr/bin/aws_completer' aws
+source /usr/share/nvm/init-nvm.sh

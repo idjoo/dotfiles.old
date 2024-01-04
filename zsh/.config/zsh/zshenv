@@ -2,24 +2,11 @@
 
 export EDITOR=nvim
 
-export GOPATH="$HOME/.go"
-export GOBIN="$GOPATH/bin"
-
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
-
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
-export WINEPREFIX="$XDG_DATA_HOME"/wine
-
-export ANDROID_SDK_ROOT=/opt/android-sdk
-
-export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
-export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 
 export SYSTEMD_COLORS=true
 export SYSTEMD_PAGER="nvim +Man!"
@@ -29,21 +16,64 @@ export PAGER="nvim +Man!"
 
 export BROWSER="firefox"
 
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
-export JUPYTERLAB_DIR="$XDG_DATA_HOME"/jupyter/lab
-
 export ANSIBLE_CONFIG="$XDG_CONFIG_HOME"/ansible/ansible.cfg
 export ANSIBLE_HOME="$XDG_CONFIG_HOME"/ansible
 
 export GPG_TTY=$(tty)
 
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+
+export GOPATH="$HOME/.go"
+export GOBIN="$GOPATH/bin"
+
+export JDTLS_JVM_ARGS="-javaagent:$HOME/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar"
+
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+
+export ZIM_HOME="$XDG_CACHE_HOME"/zim
+
+export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#c5cac5,bg:#293329,hl:#5f87af --color=fg+:#c5cac5,bg+:#4c664c,hl+:#5fd7ff --color=info:#afaf87,prompt:#d7005f,pointer:#d7005f --color=marker:#87ff00,spinner:#af5fff,header:#87afaf'
+
+export FZF_MARKS_FILE="$XDG_CONFIG_HOME"/fzf-marks/marks-file
+
+export SKIM_DEFAULT_OPTIONS=$SKIM_DEFAULT_OPTIONS' --color=fg:#c5cac5,bg:#293329,hl:#5f87af,fg+:#c5cac5,bg+:#4c664c,hl+:#5fd7ff,info:#afaf87,prompt:#d7005f,pointer:#d7005f,marker:#87ff00,spinner:#af5fff,header:#87afaf'
+
+export NVM_DIR="$XDG_DATA_HOME"/nvm
 
 # path
 typeset -U path PATH
 path+=("$HOME/.local/bin")
-path+=("$HOME/.cargo/bin")
 path+=("$HOME/.krew/bin")
+path+=("./node_modules/.bin")
 path+=("$GOBIN")
 path+=("$path[@]")
 export PATH
+
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+
+# api key
+export OPENAI_API_KEY=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
+

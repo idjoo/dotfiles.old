@@ -5,23 +5,23 @@
 # Executed by startx (run your window manager from here)
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
- for f in /etc/X11/xinit/xinitrc.d/*; do
-   [ -x "$f" ] && . "$f"
- done
- unset f
+    for f in /etc/X11/xinit/xinitrc.d/*; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
-  eval "$(ssh-agent -s)"
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)"
 fi
 
-xmodmap $HOME/.xmodmap
+xmodmap "$HOME"/.xmodmap
 xcape -e 'Mode_switch=Escape'
 xbacklight -set 50
 xset s off
 xset -dpms
 xset r rate 200 50
 
-export $(dbus-launch)
+export "$(dbus-launch)"
 
 exec herbstluftwm --locked

@@ -2,7 +2,7 @@
 
 configuration {
   modi: "drun,run,p:power-menu";
-  font: "TerminessTTF Nerd Font 11";
+  font: "Terminess Nerd Font 11";
   show-icons: true;
   sidebar-mode: true;
   click-to-exit: false;
