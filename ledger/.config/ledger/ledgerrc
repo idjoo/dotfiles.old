@@ -1,0 +1,4 @@
+--file=~/documents/ledger/main.dat
+--exchange=IDR
+--price-db=~/.local/share/ledger/price.db
+--no-pager

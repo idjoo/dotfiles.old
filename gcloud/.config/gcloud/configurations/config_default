@@ -1,0 +1,9 @@
+[core]
+account = admin@idjo.cc
+project = idjo-project
+
+[run]
+region = asia-southeast1
+
+[artifacts]
+location = asia

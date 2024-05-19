@@ -9,12 +9,12 @@
 
 + **WM**: [herbstluftwm](https://herbstluftwm.org/)
 
-+ **Terminal**: [alacritty](https://alacritty.org/)
++ **Terminal**: [wezterm](https://wezfurlong.org/wezterm/)
 
-+ **Prompt**: [starship](https://starship.rs/)
++ **Prompt**: [p10k](https://github.com/romkatv/powerlevel10k)
 
 + **Bar**: [polybar](https://polybar.github.io/)
 
-+ **Wallpaper**: [custom](https://ember.cocatrip.xyz/img/wallpaper.png)
++ **Wallpaper**: [custom](https://ember.idjo.cc/images/wallpaper.png)
 
 + **Others**: [cbonsai](https://gitlab.com/jallbrit/cbonsai), [neofetch](https://github.com/dylanaraps/neofetch)

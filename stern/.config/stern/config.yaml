@@ -1,0 +1,5 @@
+exclude: elastic|eureka|configservice|queue
+output: raw
+timestamps: short
+no-follow: true
+timezone: Asia/Jakarta

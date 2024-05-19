@@ -22,6 +22,9 @@ hc emit_hook reload
 # col_gray4='#eeeeee'
 # col_green='#758f55'
 
+# variables
+wallpaper=~/Pictures/.wallpaper/wallpaper.png
+
 xsetroot -solid '#5A8E3A'
 
 # remove all existing keybindings
@@ -52,10 +55,16 @@ hc keybind Print spawn flameshot gui
 hc keybind Control-Print spawn color-picker
 hc keybind "$Mod"-d spawn rofi -show drun
 hc keybind "$Mod"-p spawn rofi-pass
+hc keybind "$Mod"-a spawn ani-cli --rofi --skip
+hc keybind "$Mod"-b spawn rofi-bluetooth
+hc keybind "$Mod"-e spawn rofi -show emoji -modi emoji
 
 hc keybind "$Mod"-Print spawn screencast
 hc keybind "$Alt"-Print spawn screencast -s
 hc keybind "$Mod"-backslash spawn screencast-stop
+
+# lock screen
+hc keybind "$Alt"-Shift-l spawn betterlockscreen --lock
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -239,7 +248,7 @@ hc rule class=zoom tag=8 pseudotile=on
 # floating for fixed size
 hc rule fixedsize floating=on
 
-hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on floatplacement=center
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
@@ -260,17 +269,13 @@ hc unlock
 xrandr --output VGA1 --auto --right-of LVDS1 --output LVDS1 --auto
 hc detect_monitors
 
+feh --no-fehbg --bg-fill "$wallpaper"
+
 panel=$HOME/.config/herbstluftwm/panel.sh
 [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(hc list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
+for monitor in $(hc list_monitors | cut -d: -f1); do
     "$panel" "$monitor" &
 done
-
-feh --no-fehbg --bg-fill ~/Pictures/.wallpaper/*.png
-
-panel=$HOME/.config/herbstluftwm/panel.sh
-# "$panel" &
 
 compositor=$HOME/.config/herbstluftwm/compositor.sh
 "$compositor" &

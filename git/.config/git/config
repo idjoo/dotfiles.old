@@ -13,3 +13,5 @@
 	program = gpg
 [commit]
 	gpgsign = false
+[push]
+  autoSetupRemote = true

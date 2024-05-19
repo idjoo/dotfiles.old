@@ -2,14 +2,14 @@
 zinit ice wait'!'
 zinit load zsh-users/zsh-history-substring-search
 
-# minimal setup
-zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' \
-    zsh-users/zsh-completions
+zinit ice wait lucid
+zinit light zsh-users/zsh-completions
+
+zinit ice wait lucid
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+zinit ice wait lucid
+zinit light zsh-users/zsh-autosuggestions
 
 # dircolors
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \

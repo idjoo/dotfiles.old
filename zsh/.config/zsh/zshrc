@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # history
@@ -14,6 +14,11 @@ setopt inc_append_history
 setopt hist_ignore_all_dups
 
 # completion
+zinit fpath -f "$XDG_DATA_HOME"/zsh/site-functions
+autoload -Uz compinit; compinit
+autoload -Uz bashcompinit; bashcompinit
+zinit cdreplay -q
+
 zstyle ':completion:*' menu select
 
 zstyle ':completion:*' use-cache on
@@ -47,7 +52,13 @@ bindkey '^[[B' history-substring-search-down
 
 [[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
 
-mkdir -p "$XDG_RUNTIME_DIR"/keychain
-eval $(keychain --eval --quiet --agents ssh id_ed25519 id_ed25519_jenkins_dev)
+if command -v keychain 1>/dev/null 2>/dev/null; then
+	mkdir -p "$XDG_RUNTIME_DIR"/keychain
+	eval $(keychain --eval --quiet --agents ssh admin@idjo.cc.pem v.adrianus.habirowo@adira.co.id.pem jenkins.dev@adira.co.id.pem)
+fi
 
-source /usr/share/nvm/init-nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+! command -v pyenv >/dev/null || eval "$(pyenv init -)"
+
+eval "$(zoxide init zsh)"

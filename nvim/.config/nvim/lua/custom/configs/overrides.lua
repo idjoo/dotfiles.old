@@ -12,6 +12,7 @@ M.treesitter = {
     "python",
     "dockerfile",
     "yaml",
+    "groovy",
   },
   indent = {
     enable = true,
@@ -22,16 +23,7 @@ M.treesitter = {
 }
 
 M.mason = {
-  ensure_installed = {
-    "lua-language-server",
-    "stylua",
-    "css-lsp",
-    "html-lsp",
-    "prettier",
-    "jdtls",
-    "python-lsp-server",
-    "dockerfile-language-server",
-  },
+  ensure_installed = {},
 }
 
 -- git support in nvimtree
